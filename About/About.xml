@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Eternals</name>
+    <author>gkinect</author>
+    <packageId>gkinect.Eternals</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <modDependencies>
+        <li>
+            <packageId>Ludeon.RimWorld.Biotech</packageId>
+            <displayName>Biotech</displayName>
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>Ludeon.RimWorld.Biotech</li>
+    </loadAfter>
+    <description>Adds a xenotype of Eternals, a race of astral warriors with unique traits.</description>
+</ModMetaData>
