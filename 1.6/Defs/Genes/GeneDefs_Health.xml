@@ -13,7 +13,7 @@
         <defName>EternalAging</defName>
         <label>eternal aging</label>
         <labelShortAdj>eternal-aging</labelShortAdj>
-        <description>Carriers of this gene begin to age slower starting at the age of 18. By the time they reach 200, their aging rate is reduced to just 5% of the normal rate.</description>
+        <description>Carriers of this gene have triple the lifespan of a normal human. They begin to age slower starting at the age of 18. By the time they reach 200, their aging rate is reduced to just 5% of the normal rate.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>0</displayOrderInCategory>
@@ -33,10 +33,35 @@
     </GeneDef>
 
     <GeneDef>
+        <defName>EternalToughness</defName>
+        <label>eternal toughness</label>
+        <labelShortAdj>eternal-toughness</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <painFactor>0.25</painFactor>
+        <statFactors>
+            <Flammability>0.1</Flammability>
+            <StaggerDurationFactor>0.5</StaggerDurationFactor>
+            <IncomingDamageFactor>0.50</IncomingDamageFactor>
+        </statFactors>
+        <statOffsets>
+            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+            <ComfyTemperatureMax>30</ComfyTemperatureMax>
+        </statOffsets>
+        <damageFactors>
+            <Flame>0.25</Flame>
+        </damageFactors>
+    </GeneDef>
+
+    <GeneDef>
         <defName>EternalHealing</defName>
         <label>eternal healing system</label>
         <labelShortAdj>eternal-hs</labelShortAdj>
-        <description>Carriers of this gene heal wounds at an absolutely absurd rate, any bleeding stops nearly instantly, and the pain they feel is reduced.</description>
+        <description>Carriers of this gene heal wounds at an absolutely absurd rate and any bleeding stops nearly instantly.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>0</displayOrderInCategory>
@@ -47,23 +72,24 @@
         <statFactors>
             <InjuryHealingFactor>4</InjuryHealingFactor>
         </statFactors>
-        <painFactor>0.25</painFactor>
     </GeneDef>
 
     <GeneDef>
         <defName>EternalImmunity</defName>
         <label>eternal immunity</label>
         <labelShortAdj>eternal-immunity</labelShortAdj>
-        <description>Carriers of this gene have an enhanced immune system, making them resistant to diseases and infections.</description>
+        <description>Carriers of this gene have an enhanced immune system, making them resistant to diseases, sickness, and infections.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>0</displayOrderInCategory>
         <biostatMet>-5</biostatMet>
         <biostatCpx>5</biostatCpx>
+        <foodPoisoningChanceFactor>0.25</foodPoisoningChanceFactor>
         <statFactors>
             <immunityGainSpeedFactor>2</immunityGainSpeedFactor>
         </statFactors>
         <statOffsets>
+            <RawNutritionFactor>1.8</RawNutritionFactor>
             <ToxicResistance>0.75</ToxicResistance>
             <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
         </statOffsets>
@@ -103,20 +129,23 @@
             <MeleeHitChance>2</MeleeHitChance>
         </statOffsets>
     </GeneDef>
-    
+
     <GeneDef>
-        <defName>EternalTemperature</defName>
-        <label>eternal temperature</label>
-        <labelShortAdj>eternal-temp</labelShortAdj>
-        <description>Carriers of this gene have increased temperature tolerance.</description>
+        <defName>EternalReproduction</defName>
+        <label>eternal reproduction</label>
+        <labelShortAdj>eternal-reproduction</labelShortAdj>
+        <description>Carriers of this gene have an enhanced reproductive system, making them more fertile and capable of producing more offspring.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>0</displayOrderInCategory>
         <biostatMet>-5</biostatMet>
         <biostatCpx>5</biostatCpx>
+        <lovinMTBFactor>0.25</lovinMTBFactor>
+        <statFactors>
+            <Fertility>3</Fertility>   
+        </statFactors>
         <statOffsets>
-            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>30</ComfyTemperatureMax>
+            <PawnBeauty>2</PawnBeauty>
         </statOffsets>
     </GeneDef>
 </Defs>
