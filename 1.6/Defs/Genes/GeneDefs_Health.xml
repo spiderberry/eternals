@@ -19,7 +19,6 @@
         <displayOrderInCategory>0</displayOrderInCategory>
         <biostatMet>-5</biostatMet>
         <biostatCpx>5</biostatCpx>
-        <LifespanFactor>3</LifespanFactor>
         <biologicalAgeTickFactorFromAgeCurve>
             <points>
                 <li>(18, 1)</li>
@@ -30,6 +29,9 @@
                 <li>(200, 0.05)</li>
             </points>
         </biologicalAgeTickFactorFromAgeCurve>
+        <statFactors>
+            <LifespanFactor>3</LifespanFactor>
+        </statFactors>
     </GeneDef>
 
     <GeneDef>
@@ -89,33 +91,12 @@
         <statFactors>
             <ImmunityGainSpeed>2</ImmunityGainSpeed>
             <RawNutritionFactor>2</RawNutritionFactor>
+            <CancerRate>0.25</CancerRate>
         </statFactors>
         <statOffsets>
             <ToxicResistance>0.75</ToxicResistance>
             <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
         </statOffsets>
-        <chemicalBiostatOverrides>
-            <li>
-                <chemical>Alcohol</chemical>
-                <biostatMet>-1</biostatMet>
-            </li>
-            <li>
-                <chemical>Smokeleaf</chemical>
-                <biostatMet>-1</biostatMet>
-            </li>
-            <li>
-                <chemical>Psychite</chemical>
-                <biostatMet>-1</biostatMet>
-            </li>
-            <li>
-                <chemical>Go-juice</chemical>
-                <biostatMet>-1</biostatMet>
-            </li>
-            <li>
-                <chemical>Wake-up</chemical>
-                <biostatMet>-1</biostatMet>
-            </li>
-        </chemicalBiostatOverrides>
     </GeneDef>
 
     <GeneDef>
@@ -129,7 +110,7 @@
         <biostatMet>-5</biostatMet>
         <biostatCpx>5</biostatCpx>
         <statOffsets>
-            <MoveSpeed>1</MoveSpeed>
+            <MoveSpeed>3</MoveSpeed>
         </statOffsets>
     </GeneDef>
 
@@ -148,8 +129,6 @@
         </statFactors>
         <statOffsets>
             <CarryingCapacity>25</CarryingCapacity>
-            <MeleeDodgeChance>2</MeleeDodgeChance>
-            <MeleeHitChance>2</MeleeHitChance>
         </statOffsets>
     </GeneDef>
 
@@ -172,6 +151,27 @@
         </statFactors>
         <statOffsets>
             <PawnBeauty>2</PawnBeauty>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalPerception</defName>
+        <label>eternal perception</label>
+        <labelShortAdj>eternal-perception</labelShortAdj>
+        <description>Carriers of this gene have enhanced perception, allowing them to see and hear better than normal.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statFactors>
+            <PawnTrapSpringChance>0.25</PawnTrapSpringChance>
+        </statFactors>
+        <statOffsets>
+            <AimingDelayFactor>-0.25</AimingDelayFactor>
+            <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+            <MeleeDodgeChance>2</MeleeDodgeChance>
+            <MeleeHitChance>2</MeleeHitChance>
         </statOffsets>
     </GeneDef>
 </Defs>

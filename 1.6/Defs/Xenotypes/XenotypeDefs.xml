@@ -16,6 +16,8 @@
       <li>EternalSpeed</li>
       <li>EternalStrength</li>
       <li>EternalReproduction</li>
+      <li>EternalToughness</li>
+      <li>EternalPerception</li>
     </genes>
   </XenotypeDef>
 
