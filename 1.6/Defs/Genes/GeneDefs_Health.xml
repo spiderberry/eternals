@@ -81,10 +81,11 @@
         <description>Carriers of this gene have an enhanced immune system, making them resistant to diseases, sickness, and infections.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
-        <displayOrderInCategory>0</displayOrderInCategory>
+        <displayOrderInCategory>110</displayOrderInCategory>
         <biostatMet>-5</biostatMet>
         <biostatCpx>5</biostatCpx>
         <foodPoisoningChanceFactor>0.25</foodPoisoningChanceFactor>
+        <addictionChanceFactor>0.25</addictionChanceFactor>
         <statFactors>
             <immunityGainSpeedFactor>2</immunityGainSpeedFactor>
         </statFactors>
@@ -93,6 +94,28 @@
             <ToxicResistance>0.75</ToxicResistance>
             <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
         </statOffsets>
+        <chemicalBiostatOverrides>
+            <li>
+                <chemical>Alcohol</chemical>
+                <biostatMet>-1</biostatMet>
+            </li>
+            <li>
+                <chemical>Smokeleaf</chemical>
+                <biostatMet>-1</biostatMet>
+            </li>
+            <li>
+                <chemical>Psychite</chemical>
+                <biostatMet>-1</biostatMet>
+            </li>
+            <li>
+                <chemical>Go-juice</chemical>
+                <biostatMet>-1</biostatMet>
+            </li>
+            <li>
+                <chemical>Wake-up</chemical>
+                <biostatMet>-1</biostatMet>
+            </li>
+        </chemicalBiostatOverrides>
     </GeneDef>
 
     <GeneDef>
@@ -141,6 +164,9 @@
         <biostatMet>-5</biostatMet>
         <biostatCpx>5</biostatCpx>
         <lovinMTBFactor>0.25</lovinMTBFactor>
+        <customEffectDescriptions>
+            <li>Lovin' is 4x as likely to occur</li>
+        </customEffectDescriptions>
         <statFactors>
             <Fertility>3</Fertility>   
         </statFactors>
