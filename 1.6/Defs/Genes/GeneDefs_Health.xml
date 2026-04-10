@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Category -->
+    <GeneCategoryDef>
+        <defName>Eternal</defName>
+        <label>eternal</label>
+        <displayPriorityInXenotype>800</displayPriorityInXenotype>
+    </GeneCategoryDef>
+    
+    <!-- Genes -->
+    <GeneDef>
+        <defName>EternalAging</defName>
+        <label>eternal aging</label>
+        <labelShortAdj>eternal-aging</labelShortAdj>
+        <description>Carriers of this gene begin to age slower starting at the age of 18. By the time they reach 200, their aging rate is reduced to just 5% of the normal rate.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <LifespanFactor>3</LifespanFactor>
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 1)</li>
+                <li>(25, 0.8)</li>
+                <li>(40, 0.5)</li>
+                <li>(80, 0.2)</li>
+                <li>(120, 0.1)</li>
+                <li>(200, 0.05)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalHealing</defName>
+        <label>eternal healing system</label>
+        <labelShortAdj>eternal-hs</labelShortAdj>
+        <description>Carriers of this gene heal wounds at an absolutely absurd rate, any bleeding stops nearly instantly, and the pain they feel is reduced.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <preventPermanentWounds>false</preventPermanentWounds>
+        <geneClass>Gene_Clotting</geneClass>
+        <statFactors>
+            <InjuryHealingFactor>4</InjuryHealingFactor>
+        </statFactors>
+        <painFactor>0.25</painFactor>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalImmunity</defName>
+        <label>eternal immunity</label>
+        <labelShortAdj>eternal-immunity</labelShortAdj>
+        <description>Carriers of this gene have an enhanced immune system, making them resistant to diseases and infections.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statFactors>
+            <immunityGainSpeedFactor>2</immunityGainSpeedFactor>
+        </statFactors>
+        <statOffsets>
+            <ToxicResistance>0.75</ToxicResistance>
+            <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalSpeed</defName>
+        <label>eternal speed</label>
+        <labelShortAdj>eternal-speed</labelShortAdj>
+        <description>Carriers of this gene have increased movement speed.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statOffsets>
+            <MoveSpeed>1</MoveSpeed>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalStrength</defName>
+        <label>eternal strength</label>
+        <labelShortAdj>eternal-strength</labelShortAdj>
+        <description>Carriers of this gene have increased physical strength.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statFactors>
+            <MeleeDamageFactor>2</MeleeDamageFactor>
+        </statFactors>
+        <statOffsets>
+            <CarryingCapacity>25</CarryingCapacity>
+            <MeleeDodgeChance>2</MeleeDodgeChance>
+            <MeleeHitChance>2</MeleeHitChance>
+        </statOffsets>
+    </GeneDef>
+    
+    <GeneDef>
+        <defName>EternalTemperature</defName>
+        <label>eternal temperature</label>
+        <labelShortAdj>eternal-temp</labelShortAdj>
+        <description>Carriers of this gene have increased temperature tolerance.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statOffsets>
+            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+            <ComfyTemperatureMax>30</ComfyTemperatureMax>
+        </statOffsets>
+    </GeneDef>
+</Defs>

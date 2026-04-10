@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <XenotypeDef>
+    <defName>Eternal</defName>
+    <label>eternal</label>
+    <description>An eternal warrior hailing from the realm of Eternity</description>
+    <iconPath>X-Icon</iconPath>
+    <displayPriority>1000</displayPriority>
+    <combatPowerFactor>2.0</combatPowerFactor>
+    <inheritable>true</inheritable>
+    <genes>
+      <li>EternalAging</li>
+      <li>EternalHealing</li>
+      <li>EternalImmunity</li>
+      <li>EternalSpeed</li>
+      <li>EternalStrength</li>
+      <li>EternalTemperature</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>
