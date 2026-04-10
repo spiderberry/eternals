@@ -88,6 +88,7 @@
         <addictionChanceFactor>0.25</addictionChanceFactor>
         <statFactors>
             <ImmunityGainSpeed>2</ImmunityGainSpeed>
+            <RawNutritionFactor>2</RawNutritionFactor>
         </statFactors>
         <statOffsets>
             <ToxicResistance>0.75</ToxicResistance>
