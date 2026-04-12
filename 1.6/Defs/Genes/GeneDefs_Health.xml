@@ -53,6 +53,10 @@
         <statOffsets>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
             <ComfyTemperatureMax>30</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.25</ArmorRating_Heat>
+            <PainShockThreshold>0.50</PainShockThreshold>
         </statOffsets>
         <damageFactors>
             <Flame>0.25</Flame>
@@ -74,6 +78,12 @@
         <statFactors>
             <InjuryHealingFactor>4</InjuryHealingFactor>
         </statFactors>
+        <capMods>
+            <li>
+                <capacity>BloodFiltration</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
     </GeneDef>
 
     <GeneDef>
@@ -112,6 +122,12 @@
         <statOffsets>
             <MoveSpeed>3</MoveSpeed>
         </statOffsets>
+        <capMods>
+            <li>
+                <capacity>BloodPumping</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
     </GeneDef>
 
     <GeneDef>
@@ -126,10 +142,8 @@
         <biostatCpx>5</biostatCpx>
         <statFactors>
             <MeleeDamageFactor>2</MeleeDamageFactor>
+            <CarryingCapacity>2</CarryingCapacity>
         </statFactors>
-        <statOffsets>
-            <CarryingCapacity>25</CarryingCapacity>
-        </statOffsets>
     </GeneDef>
 
     <GeneDef>
@@ -150,7 +164,7 @@
             <Fertility>3</Fertility>   
         </statFactors>
         <statOffsets>
-            <PawnBeauty>2</PawnBeauty>
+            <PawnBeauty>3</PawnBeauty>
         </statOffsets>
     </GeneDef>
 
@@ -172,6 +186,43 @@
             <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
             <MeleeDodgeChance>2</MeleeDodgeChance>
             <MeleeHitChance>2</MeleeHitChance>
+        </statOffsets>
+        <capMods>
+            <li>
+                <capacity>Hearing</capacity>
+                <offset>0.5</offset>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalIntellect</defName>
+        <label>eternal intellect</label>
+        <labelShortAdj>eternal-intellect</labelShortAdj>
+        <description>Carriers of this gene have enhanced cognitive abilities, allowing them to think more clearly and process information faster.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statFactors>
+            <GlobalLearningFactor>1.25</GlobalLearningFactor>
+            <LearningRateFactor>1.25</LearningRateFactor>
+            <ResearchSpeed>1.25</ResearchSpeed>
+            <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+            <HackingSpeed MayRequire="ludeon.rimworld.ideology">1.25</HackingSpeed>
+        </statFactors>
+        <statOffsets>
+            <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+            <SocialImpact>0.25</SocialImpact>
+            <TameAnimalChance>0.25</TameAnimalChance>
+            <TrainAnimalChance>0.25</TrainAnimalChance>
+            <NegotiationAbility>0.25</NegotiationAbility>
+            <ConversionPower MayRequire="ludeon.rimworld.ideology">0.25</ConversionPower>
         </statOffsets>
     </GeneDef>
 </Defs>
