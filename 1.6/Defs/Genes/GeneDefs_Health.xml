@@ -122,6 +122,7 @@
         <statFactors>
             <MeleeDamageFactor>2</MeleeDamageFactor>
             <CarryingCapacity>2</CarryingCapacity>
+            <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2</VEF_MassCarryCapacity>
         </statFactors>
         <statOffsets>
             <MoveSpeed>3</MoveSpeed>
@@ -175,6 +176,14 @@
                 <capacity>Sight</capacity>
                 <offset>0.5</offset>
             </li>
+            <li>
+                <capacity>Breathing</capacity>
+                <offset>0.5</offset>
+            </li>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.5</offset>
+            </li>
         </capMods>
     </GeneDef>
 
@@ -190,6 +199,8 @@
         <biostatCpx>5</biostatCpx>
         <statFactors>
             <PawnTrapSpringChance>0.25</PawnTrapSpringChance>
+            <StaggerDurationFactor>0.5</StaggerDurationFactor>
+            <MeleeCooldownFactor>0.5</MeleeCooldownFactor>
         </statFactors>
         <statOffsets>
             <AimingDelayFactor>-0.25</AimingDelayFactor>
