@@ -110,31 +110,10 @@
     </GeneDef>
 
     <GeneDef>
-        <defName>EternalSpeed</defName>
-        <label>eternal speed</label>
-        <labelShortAdj>eternal-speed</labelShortAdj>
-        <description>Carriers of this gene have increased movement speed.</description>
-        <iconPath>G-IDK</iconPath>
-        <displayCategory>Eternal</displayCategory>
-        <displayOrderInCategory>0</displayOrderInCategory>
-        <biostatMet>-5</biostatMet>
-        <biostatCpx>5</biostatCpx>
-        <statOffsets>
-            <MoveSpeed>3</MoveSpeed>
-        </statOffsets>
-        <capMods>
-            <li>
-                <capacity>BloodPumping</capacity>
-                <offset>0.5</offset>
-            </li>
-        </capMods>
-    </GeneDef>
-
-    <GeneDef>
-        <defName>EternalStrength</defName>
-        <label>eternal strength</label>
-        <labelShortAdj>eternal-strength</labelShortAdj>
-        <description>Carriers of this gene have increased physical strength.</description>
+        <defName>EternalPhysiology</defName>
+        <label>eternal physiology</label>
+        <labelShortAdj>eternal-physiology</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical capabilities.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>0</displayOrderInCategory>
@@ -144,6 +123,15 @@
             <MeleeDamageFactor>2</MeleeDamageFactor>
             <CarryingCapacity>2</CarryingCapacity>
         </statFactors>
+        <statOffsets>
+            <MoveSpeed>3</MoveSpeed>
+        </statOffsets>
+        <capMods>
+            <li>
+                <capacity>BloodPumping</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
     </GeneDef>
 
     <GeneDef>
@@ -169,10 +157,32 @@
     </GeneDef>
 
     <GeneDef>
-        <defName>EternalPerception</defName>
-        <label>eternal perception</label>
-        <labelShortAdj>eternal-perception</labelShortAdj>
-        <description>Carriers of this gene have enhanced perception, allowing them to see and hear better than normal.</description>
+        <defName>EternalSenses</defName>
+        <label>eternal senses</label>
+        <labelShortAdj>eternal-senses</labelShortAdj>
+        <description>Carriers of this gene have enhanced senses, allowing them to see and hear better than normal.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <capMods>
+            <li>
+                <capacity>Hearing</capacity>
+                <offset>0.5</offset>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalCombatInstinct</defName>
+        <label>eternal combat </label>
+        <labelShortAdj>eternal-combat</labelShortAdj>
+        <description>Carriers of this gene have an enhanced combat instinct, making them more effective in battle.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>0</displayOrderInCategory>
@@ -187,16 +197,6 @@
             <MeleeDodgeChance>2</MeleeDodgeChance>
             <MeleeHitChance>2</MeleeHitChance>
         </statOffsets>
-        <capMods>
-            <li>
-                <capacity>Hearing</capacity>
-                <offset>0.5</offset>
-            </li>
-            <li>
-                <capacity>Sight</capacity>
-                <offset>0.5</offset>
-            </li>
-        </capMods>
     </GeneDef>
 
     <GeneDef>

@@ -13,11 +13,11 @@
       <li>EternalAging</li>
       <li>EternalHealing</li>
       <li>EternalImmunity</li>
-      <li>EternalSpeed</li>
-      <li>EternalStrength</li>
+      <li>EternalPhysiology</li>
       <li>EternalReproduction</li>
       <li>EternalToughness</li>
-      <li>EternalPerception</li>
+      <li>EternalSenses</li>
+      <li>EternalCombatInstinct</li>
       <li>EternalIntellect</li>
     </genes>
   </XenotypeDef>
