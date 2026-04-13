@@ -255,6 +255,26 @@
 		</modExtensions>
     </GeneDef>
 
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalAgeEvolution</defName>
+        <label>eternal age evolution</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Grows stronger as the pawn gets older.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <!-- Hediff -->
+
     <HediffDef Name="EternitySpecialHediffBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>False</scenarioCanAdd>
@@ -325,24 +345,6 @@
         </comps>
     </HediffDef>
 
-    <GeneDef MayRequire="EBSG.Framework">
-        <defName>EternalAgeEvolution</defName>
-        <label>eternal age evolution</label>
-        <geneClass>EBSGFramework.HediffAdder</geneClass>
-        <description>Grows stronger as the pawn gets older.</description>
-        <biostatArc>1</biostatArc>
-        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
-        <displayOrderInCategory>10</displayOrderInCategory>
-        <customEffectDescriptions>
-            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
-        </customEffectDescriptions>
-        <modExtensions>
-			<li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
-			</li>
-		</modExtensions>
-    </GeneDef>
-
     <HediffDef MayRequire="EBSG.Framework">
         <defName>AgeEvolution</defName>
         <label>age evolution</label>
@@ -368,4 +370,5 @@
                 <li Class="EBSGFramework.HediffCompProperties_SeverityByAge" />
             </comps>
     </HediffDef>
+    
 </Defs>
