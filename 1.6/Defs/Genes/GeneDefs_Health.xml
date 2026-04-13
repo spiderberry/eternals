@@ -236,4 +236,136 @@
             <ConversionPower MayRequire="ludeon.rimworld.ideology">0.25</ConversionPower>
         </statOffsets>
     </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalEvolvingCombat</defName>
+        <label>eternal evolving combat</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>EternalEvolvingCombat</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <HediffDef Name="EternitySpecialHediffBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+    </HediffDef>
+
+    <HediffDef Name="EternityEvolvingBase" ParentName="EternitySpecialHediffBase" Abstract="True" MayRequire="EBSG.Framework">
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Evolution progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="EternityEvolvingBase" MayRequire="EBSG.Framework">
+        <defName>EternalEvolvingLethality</defName>
+        <label>eternal evolving (lethality)</label>
+        <description>This pawn consumed or had something used on them that allows them to surpass the limits of their genetic code. This particular evolution makes them far more deadly than they normally would be.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.1</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="EternitySpecialHediffBase" MayRequire="EBSG.Framework">
+        <defName>EternalEvolvingCombat</defName>
+        <label>eternal evolving combat</label>
+        <description>Each time this pawn is hit they become more resilient, and every time they kill a humanlike foe they become more lethal overall.</description>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <stages>
+            <li>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <statFactors>
+                    <IncomingDamageFactor>0.99</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Durability Progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+                <cooldownTicks>30</cooldownTicks>
+                <severityChangeFactor>0.01</severityChangeFactor>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+                <hediff>EternalEvolvingLethality</hediff>
+                <severityForFirstKill>0.1</severityForFirstKill>
+                <severityPerExtraKill>0.1</severityPerExtraKill>
+                <allowMechanoids>False</allowMechanoids>
+                <allowAnimals>False</allowAnimals>
+                <allowDryads>False</allowDryads>
+                <allowInsects>False</allowInsects>
+                <allowEntities>False</allowEntities>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalEvolvingAge</defName>
+        <label>eternal evolving age</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Grows stronger as the pawn gets older.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>SeverityByAge</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>SeverityByAge</defName>
+        <label>severity by age</label>
+        <description>This hediff increases in severity as the pawn gets older, representing a power that grows as the carrier ages.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+         <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.05</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+            <comps>
+                <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                    <prependString>Age-based power : </prependString>
+                    <appendString>%</appendString>
+                    <roundDigits>0</roundDigits>
+                </li>
+                <li Class="EBSGFramework.HediffCompProperties_SeverityByAge" />
+            </comps>
+    </HediffDef>
 </Defs>

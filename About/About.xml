@@ -13,7 +13,11 @@
         </li>
     </modDependencies>
     <loadAfter>
+        <li>Ludeon.RimWorld.Royalty</li>
+        <li>Ludeon.RimWorld.Ideology</li>
         <li>Ludeon.RimWorld.Biotech</li>
+        <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+        <li>EBSG.Framework</li>
     </loadAfter>
     <description>Adds a xenotype of Eternals, a race of astral warriors with unique traits.</description>
 </ModMetaData>
