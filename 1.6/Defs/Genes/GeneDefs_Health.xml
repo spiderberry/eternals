@@ -250,7 +250,7 @@
         </customEffectDescriptions>
         <modExtensions>
 			<li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply><li><hediff>EternalEvolvingCombat</hediff></li></hediffsToApply>
+				<hediffsToApply><li><hediff>EternalCombatAdaptation</hediff></li></hediffsToApply>
 			</li>
 		</modExtensions>
     </GeneDef>
@@ -275,9 +275,9 @@
     </HediffDef>
 
     <HediffDef ParentName="EternityEvolvingBase" MayRequire="EBSG.Framework">
-        <defName>EternalEvolvingLethality</defName>
-        <label>eternal evolving (lethality)</label>
-        <description>This pawn consumed or had something used on them that allows them to surpass the limits of their genetic code. This particular evolution makes them far more deadly than they normally would be.</description>
+        <defName>LethalEvolution</defName>
+        <label>lethal evolution</label>
+        <description>This pawn genes constantly evolve as they kill more enemies</description>
         <stages>
             <li>
                 <statOffsets>
@@ -289,8 +289,8 @@
     </HediffDef>
 
     <HediffDef ParentName="EternitySpecialHediffBase" MayRequire="EBSG.Framework">
-        <defName>EternalEvolvingCombat</defName>
-        <label>eternal evolving combat</label>
+        <defName>EternalCombatAdaptation</defName>
+        <label>eternal combat adaptation</label>
         <description>Each time this pawn is hit they become more resilient, and every time they kill a humanlike foe they become more lethal overall.</description>
         <initialSeverity>1</initialSeverity>
         <maxSeverity>100</maxSeverity>
@@ -304,7 +304,7 @@
         </stages>
         <comps>
             <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
-                <prependString>Durability Progress : </prependString>
+                <prependString>Toughness Progress : </prependString>
                 <appendString>%</appendString>
                 <roundDigits>0</roundDigits>
             </li>
@@ -313,7 +313,7 @@
                 <severityChangeFactor>0.01</severityChangeFactor>
             </li>
             <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
-                <hediff>EternalEvolvingLethality</hediff>
+                <hediff>LethalEvolution</hediff>
                 <severityForFirstKill>0.1</severityForFirstKill>
                 <severityPerExtraKill>0.1</severityPerExtraKill>
                 <allowMechanoids>False</allowMechanoids>
@@ -326,8 +326,8 @@
     </HediffDef>
 
     <GeneDef MayRequire="EBSG.Framework">
-        <defName>EternalEvolvingAge</defName>
-        <label>eternal evolving age</label>
+        <defName>EternalAgeEvolution</defName>
+        <label>eternal age evolution</label>
         <geneClass>EBSGFramework.HediffAdder</geneClass>
         <description>Grows stronger as the pawn gets older.</description>
         <biostatArc>1</biostatArc>
@@ -338,14 +338,14 @@
         </customEffectDescriptions>
         <modExtensions>
 			<li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply><li><hediff>SeverityByAge</hediff></li></hediffsToApply>
+				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
 			</li>
 		</modExtensions>
     </GeneDef>
 
     <HediffDef MayRequire="EBSG.Framework">
-        <defName>SeverityByAge</defName>
-        <label>severity by age</label>
+        <defName>AgeEvolution</defName>
+        <label>age evolution</label>
         <description>This hediff increases in severity as the pawn gets older, representing a power that grows as the carrier ages.</description>
         <hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>False</scenarioCanAdd>
