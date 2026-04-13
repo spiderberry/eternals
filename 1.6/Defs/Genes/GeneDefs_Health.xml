@@ -10,6 +10,97 @@
     
     <!-- Genes -->
     <GeneDef>
+        <defName>EternalCore</defName>
+        <label>eternal core</label>
+        <labelShortAdj>eternal-core</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>2</biostatCpx>
+        <customEffectDescriptions>
+            <li>Lovin' is more likely to occur</li>
+        </customEffectDescriptions>
+        <painFactor>0.75</painFactor>
+        <foodPoisoningChanceFactor>0.75</foodPoisoningChanceFactor>
+        <addictionChanceFactor>0.75</addictionChanceFactor>
+        <lovinMTBFactor>0.75</lovinMTBFactor>
+        <statFactors>
+            <Flammability>0.75</Flammability>
+            <IncomingDamageFactor>0.75</IncomingDamageFactor>
+            <StaggerDurationFactor>0.75</StaggerDurationFactor>
+            <PawnTrapSpringChance>0.75</PawnTrapSpringChance>
+            <StaggerDurationFactor>0.75</StaggerDurationFactor>
+            <MeleeCooldownFactor>0.75</MeleeCooldownFactor>
+            <AimingDelayFactor>0.75</AimingDelayFactor>
+            <MentalBreakThreshold>0.75</MentalBreakThreshold>
+            <CancerRate>0.75</CancerRate>
+            <InjuryHealingFactor>1.25</InjuryHealingFactor>
+            <ImmunityGainSpeed>1.25</ImmunityGainSpeed>
+            <RawNutritionFactor>1.25</RawNutritionFactor>
+            <ToxicResistance>1.25</ToxicResistance>
+            <ToxicEnvironmentResistance>1.25</ToxicEnvironmentResistance>
+            <ArmorRating_Blunt>1.25</ArmorRating_Blunt>
+            <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.25</ArmorRating_Heat>
+            <PainShockThreshold>1.25</PainShockThreshold>
+            <MeleeDamageFactor>1.25</MeleeDamageFactor>
+            <CarryingCapacity>1.25</CarryingCapacity>
+            <MoveSpeed>1.25</MoveSpeed>
+            <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2</VEF_MassCarryCapacity>
+            <Fertility>1.25</Fertility>
+            <PawnBeauty>1.25</PawnBeauty>
+            <GlobalLearningFactor>1.25</GlobalLearningFactor>
+            <LearningRateFactor>1.25</LearningRateFactor>
+            <ResearchSpeed>1.25</ResearchSpeed>
+            <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+            <MeleeDodgeChance>1.25</MeleeDodgeChance>
+            <MeleeHitChance>1.25</MeleeHitChance>
+            <HackingSpeed MayRequire="ludeon.rimworld.ideology">1.25</HackingSpeed>
+            <ShootingAccuracyPawn>1.25</ShootingAccuracyPawn>    
+            <SocialImpact>1.25</SocialImpact>
+            <TameAnimalChance>1.25</TameAnimalChance>
+            <TrainAnimalChance>1.25</TrainAnimalChance>
+            <NegotiationAbility>1.25</NegotiationAbility>
+            <ConversionPower MayRequire="ludeon.rimworld.ideology">1.25</ConversionPower>
+        </statFactors>
+        <statOffsets>
+            <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+            <ComfyTemperatureMax>5</ComfyTemperatureMax>
+        </statOffsets>
+        <damageFactors>
+            <Flame>0.75</Flame>
+        </damageFactors>
+        <capMods>
+            <li>
+                <capacity>BloodFiltration</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>BloodPumping</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>Breathing</capacity>
+                <offset>0.25</offset>
+            </li>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.25</offset>
+            </li>
+        </capMods>
+    </GeneDef>
+
+    <GeneDef>
         <defName>EternalAging</defName>
         <label>eternal aging</label>
         <labelShortAdj>eternal-aging</labelShortAdj>
