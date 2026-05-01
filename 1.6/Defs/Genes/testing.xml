@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Stat -->
+    <StatDef>
+        <defName>Eternal_Percentage</defName>
+        <label>eternal percentage</label>
+        <description>Represents the percentage of eternal traits possessed by an individual.</description>
+        <category>BasicsPawn</category>
+        <defaultBaseValue>0</defaultBaseValue>
+        <hideAtValue>0</hideAtValue>
+        <minValue>0</minValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>1000</displayPriorityInCategory>
+    </StatDef>
+
+    <StatDef>
+        <defName>Test_stat</defName>
+        <label>test stat</label>
+        <description>Represents the test stat for an individual.</description>
+        <category>BasicsPawn</category>
+        <defaultBaseValue>0</defaultBaseValue>
+        <hideAtValue>0</hideAtValue>
+        <minValue>0</minValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>1000</displayPriorityInCategory>
+    </StatDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>balls</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>test casdore</label>
+        <labelShortAdj>test-stat-core</labelShortAdj>
+        <description>Test</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>2</biostatCpx>
+        <statOffsets>
+            <Test_stat>2</Test_stat>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestCoreStat</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>test stat core</label>
+        <labelShortAdj>test-stat-core</labelShortAdj>
+        <description>Test</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>2</biostatCpx>
+        <statOffsets>
+            <Test_stat>2</Test_stat>
+        </statOffsets>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Test-H-Stat</hediff>
+                    </li>
+                    <li>
+                        <hediff>Test-H-Test</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef>
+        <defName>applepie</defName>
+        <label>hemogenic pawn</label>
+        <description>This is a test hediff</description>
+        <everCurableByItem>false</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <stages />
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByGenes">
+                <baseSeverity>0.5</baseSeverity>
+                <geneEffects>
+                    <li>
+                        <gene>Sleepy</gene>
+                        <statFactor>InjuryHealingFactor</statFactor>
+                    </li>
+                </geneEffects>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Test % : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>2</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Test-H-Stat</defName>
+        <label>test-h-stat</label>
+        <description>This hediff test</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>1.5</MoveSpeed>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByOtherHediffSeverities">
+                <baseSeverity>1</baseSeverity>
+                <hediffSets>
+                    <li>
+                        <hediff>Test-H-Test</hediff>
+                    </li>
+                </hediffSets>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Test-H-Test</defName>
+        <label>test-h-test</label>
+        <description>This hediff test</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByGenes">
+                <baseSeverity>0.75</baseSeverity>
+                <geneEffects>
+                    <li>
+                        <gene>Sleepy</gene>
+                        <statFactor>InjuryHealingFactor</statFactor>
+                    </li>
+                </geneEffects>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Test % : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>2</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Category -->
+    <GeneCategoryDef>
+        <defName>Testing</defName>
+        <label>testing</label>
+        <displayPriorityInXenotype>8000000000</displayPriorityInXenotype>
+    </GeneCategoryDef>
+    
+    <!-- Genes -->
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestCore</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>test core</label>
+        <labelShortAdj>test-core</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>2</biostatCpx>
+        <statOffsets>
+            <Eternal_Percentage>0.1</Eternal_Percentage>
+        </statOffsets>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Test-H-Core</hediff>
+                    </li>
+                    <li>
+                        <hediff>Test-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Test-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Test-H-Core</defName>
+        <label>test-h-core</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>1</MoveSpeed>
+                    <SocialImpact>1</SocialImpact>
+                    <GlobalLearningFactor>1</GlobalLearningFactor>
+                </statFactors>
+                <!-- <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity> -->
+                <statFactorEffectMultiplier>Eternal_Percentage</statFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestToughness</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>test toughness</label>
+        <labelShortAdj>test-toughness</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Test-H-Toughness</hediff>
+                    </li>
+                    <li>
+                        <hediff>Test-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Test-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Test-H-Toughness</defName>
+        <label>test-h-toughness</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>0.10</MoveSpeed>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestPhysiology</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>test physiology</label>
+        <labelShortAdj>test-physiology</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical capabilities.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Test-H-Physiology</hediff>
+                    </li>
+                    <li>
+                        <hediff>Test-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Test-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Test-H-Physiology</defName>
+        <label>test-h-physiology</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <SocialImpact>0.05</SocialImpact>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>             
+            </li>
+        </stages>
+    </HediffDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestIntellect</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>test intellect</label>
+        <labelShortAdj>test-intellect</labelShortAdj>
+        <description>Carriers of this gene have enhanced cognitive abilities, allowing them to think more clearly and process information faster.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Test-H-Intellect</hediff>
+                    </li>
+                    <li>
+                        <hediff>Test-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Test-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Test-H-Intellect</defName>
+        <label>test-h-intellect</label>
+        <description>This hediff provides enhanced cognitive abilities to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <GlobalLearningFactor>0.10</GlobalLearningFactor>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef> -->
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestEvolvingCombat</defName>
+        <label>test evolving combat</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>108</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>TestCombatAdaptation</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>TestAgeEvolution</defName>
+        <label>test age evolution</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Grows stronger as the pawn gets older.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayCategory>Testing</displayCategory>
+        <displayOrderInCategory>100</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>AgeTEvolution</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <!-- Hediff -->
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Test-H-Power</defName>
+        <label>test-h-Power</label>
+        <description>This hediff provides a multiplier to the test gene power effects</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <initialSeverity>0</initialSeverity>
+        <maxSeverity>100.1</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByGenes">
+                <baseSeverity>100</baseSeverity>
+                <geneEffects>
+                    <li>
+                        <gene>TestCore</gene>
+                    </li>
+                    <!-- <li>
+                        <gene>TestPhysiology</gene>
+                        <effect>33.3333333333</effect>
+                    </li>
+                    <li>
+                        <gene>TestIntellect</gene>
+                        <effect>33.3333333333</effect>
+                    </li>
+                    <li>
+                        <gene>TestToughness</gene>
+                        <effect>33.3333333333</effect>
+                    </li> -->
+                </geneEffects>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Test % : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>2</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef Name="Test-H-Scaling" Abstract="True" MayRequire="EBSG.Framework">
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+        <description>This hediff represents what % test the pawn is and scales accordingly</description>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <maxSeverity>200.1</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByOtherHediffSeverities">
+                <baseSeverity>0.001</baseSeverity>
+                <hediffSets>
+                    <li>
+                        <hediff>Test-H-Power</hediff>
+                        <factor>1</factor>
+                    </li>
+                </hediffSets>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Test % : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef Name="TestSpecialHediffBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+    </HediffDef>
+
+    <HediffDef Name="TestEvolvingBase" ParentName="TestSpecialHediffBase" Abstract="True" MayRequire="EBSG.Framework">
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>T Evolution progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="TestEvolvingBase" MayRequire="EBSG.Framework">
+        <defName>LethalTEvolution</defName>
+        <label>lethal t evolution</label>
+        <description>This pawn genes constantly evolve as they kill more enemies</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.1</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="TestSpecialHediffBase" MayRequire="EBSG.Framework">
+        <defName>TestCombatAdaptation</defName>
+        <label>test combat adaptation</label>
+        <description>Each time this pawn is hit they become more resilient, and every time they kill a humanlike foe they become more lethal overall.</description>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <stages>
+            <li>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <statFactors>
+                    <IncomingDamageFactor>0.99</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Toughness Progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+                <cooldownTicks>30</cooldownTicks>
+                <severityChangeFactor>0.01</severityChangeFactor>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+                <hediff>LethalTEvolution</hediff>
+                <severityForFirstKill>0.1</severityForFirstKill>
+                <severityPerExtraKill>0.1</severityPerExtraKill>
+                <allowMechanoids>False</allowMechanoids>
+                <allowAnimals>False</allowAnimals>
+                <allowDryads>False</allowDryads>
+                <allowInsects>False</allowInsects>
+                <allowEntities>False</allowEntities>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>AgeTEvolution</defName>
+        <label>age t evolution</label>
+        <description>This hediff increases in severity as the pawn gets older, representing a power that grows as the carrier ages.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+         <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.05</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+            <comps>
+                <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                    <prependString>Age-based power : </prependString>
+                    <appendString>%</appendString>
+                    <roundDigits>0</roundDigits>
+                </li>
+                <li Class="EBSGFramework.HediffCompProperties_SeverityByAge" />
+            </comps>
+    </HediffDef>
+    
+</Defs>

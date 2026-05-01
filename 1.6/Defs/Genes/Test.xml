@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Category -->
+    <GeneCategoryDef>
+        <defName>Eternal</defName>
+        <label>eternal</label>
+        <displayPriorityInXenotype>800</displayPriorityInXenotype>
+    </GeneCategoryDef>
+    
+    <!-- Genes -->
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalCore</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>eternal core</label>
+        <labelShortAdj>eternal-core</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>2</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Core</hediff>
+                    </li>
+                    <li>
+                        <hediff>Eternal-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Eternal-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Core</defName>
+        <label>eternal-h-core</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>0.05</MoveSpeed>
+                    <SocialImpact>0.05</SocialImpact>
+                    <GlobalLearningFactor>0.05</GlobalLearningFactor>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <offset>0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <offset>0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <offset>0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.25</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <GeneDef>
+        <defName>EternalAging</defName>
+        <label>eternal aging</label>
+        <labelShortAdj>eternal-aging</labelShortAdj>
+        <description>Carriers of this gene have triple the lifespan of a normal human. They begin to age slower starting at the age of 18. By the time they reach 200, their aging rate is reduced to just 5% of the normal rate.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <biologicalAgeTickFactorFromAgeCurve>
+            <points>
+                <li>(18, 1)</li>
+                <li>(25, 0.8)</li>
+                <li>(40, 0.5)</li>
+                <li>(80, 0.2)</li>
+                <li>(120, 0.1)</li>
+                <li>(200, 0.05)</li>
+            </points>
+        </biologicalAgeTickFactorFromAgeCurve>
+        <statFactors>
+            <LifespanFactor>3</LifespanFactor>
+        </statFactors>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalToughness</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>eternal toughness</label>
+        <labelShortAdj>eternal-toughness</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Toughness</hediff>
+                    </li>
+                    <li>
+                        <hediff>Eternal-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Eternal-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Toughness</defName>
+        <label>eternal-h-toughness</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>0.10</MoveSpeed>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <GeneDef>
+        <defName>EternalHealing</defName>
+        <label>eternal healing system</label>
+        <labelShortAdj>eternal-hs</labelShortAdj>
+        <description>Carriers of this gene heal wounds at an absolutely absurd rate and any bleeding stops nearly instantly.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <preventPermanentWounds>false</preventPermanentWounds>
+        <geneClass>Gene_Clotting</geneClass>
+        <statFactors>
+            <InjuryHealingFactor>4</InjuryHealingFactor>
+        </statFactors>
+        <capMods>
+            <li>
+                <capacity>BloodFiltration</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalImmunity</defName>
+        <label>eternal immunity</label>
+        <labelShortAdj>eternal-immunity</labelShortAdj>
+        <description>Carriers of this gene have an enhanced immune system, making them resistant to diseases, sickness, and infections.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>110</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <foodPoisoningChanceFactor>0.25</foodPoisoningChanceFactor>
+        <addictionChanceFactor>0.25</addictionChanceFactor>
+        <statFactors>
+            <ImmunityGainSpeed>2</ImmunityGainSpeed>
+            <RawNutritionFactor>2</RawNutritionFactor>
+            <CancerRate>0.25</CancerRate>
+        </statFactors>
+        <statOffsets>
+            <ToxicResistance>0.75</ToxicResistance>
+            <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalPhysiology</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>eternal physiology</label>
+        <labelShortAdj>eternal-physiology</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical capabilities.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Physiology</hediff>
+                    </li>
+                    <li>
+                        <hediff>Eternal-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Eternal-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Physiology</defName>
+        <label>eternal-h-physiology</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <SocialImpact>0.05</SocialImpact>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>             
+            </li>
+        </stages>
+    </HediffDef>
+
+    <GeneDef>
+        <defName>EternalReproduction</defName>
+        <label>eternal reproduction</label>
+        <labelShortAdj>eternal-reproduction</labelShortAdj>
+        <description>Carriers of this gene have an enhanced reproductive system, making them more fertile and capable of producing more offspring.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <lovinMTBFactor>0.25</lovinMTBFactor>
+        <customEffectDescriptions>
+            <li>Lovin' is 4x as likely to occur</li>
+        </customEffectDescriptions>
+        <statFactors>
+            <Fertility>3</Fertility>   
+        </statFactors>
+        <statOffsets>
+            <PawnBeauty>3</PawnBeauty>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalSenses</defName>
+        <label>eternal senses</label>
+        <labelShortAdj>eternal-senses</labelShortAdj>
+        <description>Carriers of this gene have enhanced senses, allowing them to see and hear better than normal.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <capMods>
+            <li>
+                <capacity>Hearing</capacity>
+                <offset>0.5</offset>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <offset>0.5</offset>
+            </li>
+            <li>
+                <capacity>Breathing</capacity>
+                <offset>0.5</offset>
+            </li>
+            <li>
+                <capacity>Consciousness</capacity>
+                <offset>0.5</offset>
+            </li>
+        </capMods>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>EternalCombatInstinct</defName>
+        <label>eternal combat </label>
+        <labelShortAdj>eternal-combat</labelShortAdj>
+        <description>Carriers of this gene have an enhanced combat instinct, making them more effective in battle.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statFactors>
+            <PawnTrapSpringChance>0.25</PawnTrapSpringChance>
+            <StaggerDurationFactor>0.5</StaggerDurationFactor>
+            <MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+        </statFactors>
+        <statOffsets>
+            <AimingDelayFactor>-0.25</AimingDelayFactor>
+            <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+            <MeleeDodgeChance>2</MeleeDodgeChance>
+            <MeleeHitChance>2</MeleeHitChance>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalIntellect</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>eternal intellect</label>
+        <labelShortAdj>eternal-intellect</labelShortAdj>
+        <description>Carriers of this gene have enhanced cognitive abilities, allowing them to think more clearly and process information faster.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>0</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Intellect</hediff>
+                    </li>
+                    <li>
+                        <hediff>Eternal-H-Power</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <HediffDef ParentName="Eternal-H-Scaling" MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Intellect</defName>
+        <label>eternal-h-intellect</label>
+        <description>This hediff provides enhanced cognitive abilities to its host</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <GlobalLearningFactor>0.10</GlobalLearningFactor>
+                </statFactors>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <capMods>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalEvolvingCombat</defName>
+        <label>eternal evolving combat</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>108</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>EternalCombatAdaptation</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalAgeEvolution</defName>
+        <label>eternal age evolution</label>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <description>Grows stronger as the pawn gets older.</description>
+        <biostatArc>1</biostatArc>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>100</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <!-- Hediff -->
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Power</defName>
+        <label>eternal-h-Power</label>
+        <description>This hediff provides a multiplier to the eternal gene power effects</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <maxSeverity>2.001</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByGenes">
+                <baseSeverity>0.001</baseSeverity>
+                <geneEffects>
+                    <li>
+                        <gene>EternalCore</gene>
+                        <effect>1</effect>
+                    </li>
+                    <li>
+                        <gene>EternalPhysiology</gene>
+                        <effect>0.333</effect>
+                    </li>
+                    <li>
+                        <gene>EternalIntellect</gene>
+                        <effect>0.333</effect>
+                    </li>
+                    <li>
+                        <gene>EternalToughness</gene>
+                        <effect>0.333</effect>
+                    </li>
+                </geneEffects>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Eternal % : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef Name="Eternal-H-Scaling" Abstract="True" MayRequire="EBSG.Framework">
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+        <description>This hediff represents what % eternal the pawn is and scales accordingly</description>
+        <isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Eternal % : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByOtherHediffSeverities">
+                <baseSeverity>0.001</baseSeverity>
+                <hediffSets>
+                    <li>
+                        <hediff>Eternal-H-Power</hediff>
+                        <factor>1</factor>
+                    </li>
+                </hediffSets>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef Name="EternitySpecialHediffBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+    </HediffDef>
+
+    <HediffDef Name="EternityEvolvingBase" ParentName="EternitySpecialHediffBase" Abstract="True" MayRequire="EBSG.Framework">
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Evolution progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="EternityEvolvingBase" MayRequire="EBSG.Framework">
+        <defName>LethalEvolution</defName>
+        <label>lethal evolution</label>
+        <description>This pawn genes constantly evolve as they kill more enemies</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.1</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="EternitySpecialHediffBase" MayRequire="EBSG.Framework">
+        <defName>EternalCombatAdaptation</defName>
+        <label>eternal combat adaptation</label>
+        <description>Each time this pawn is hit they become more resilient, and every time they kill a humanlike foe they become more lethal overall.</description>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <stages>
+            <li>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <statFactors>
+                    <IncomingDamageFactor>0.99</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Toughness Progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+                <cooldownTicks>30</cooldownTicks>
+                <severityChangeFactor>0.01</severityChangeFactor>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+                <hediff>LethalEvolution</hediff>
+                <severityForFirstKill>0.1</severityForFirstKill>
+                <severityPerExtraKill>0.1</severityPerExtraKill>
+                <allowMechanoids>False</allowMechanoids>
+                <allowAnimals>False</allowAnimals>
+                <allowDryads>False</allowDryads>
+                <allowInsects>False</allowInsects>
+                <allowEntities>False</allowEntities>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>AgeEvolution</defName>
+        <label>age evolution</label>
+        <description>This hediff increases in severity as the pawn gets older, representing a power that grows as the carrier ages.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+         <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.05</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+            <comps>
+                <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                    <prependString>Age-based power : </prependString>
+                    <appendString>%</appendString>
+                    <roundDigits>0</roundDigits>
+                </li>
+                <li Class="EBSGFramework.HediffCompProperties_SeverityByAge" />
+            </comps>
+    </HediffDef>
+    
+</Defs>
