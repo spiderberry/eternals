@@ -13,7 +13,7 @@
     <StatDef>
         <defName>Eternal_Composition</defName>
         <label>eternal composition</label>
-        <description>Represents the eternal composition for an individual.</description>
+        <description>Represents the eternal composition for an individual</description>
         <category>BasicsPawn</category>
         <defaultBaseValue>0</defaultBaseValue>
         <hideAtValue>0</hideAtValue>
@@ -22,17 +22,25 @@
         <displayPriorityInCategory>1000</displayPriorityInCategory>
     </StatDef>
 
+    <!-- Genes -->
+
     <GeneDef MayRequire="EBSG.Framework">
         <defName>Eternal-Core</defName>
         <geneClass>EBSGFramework.HediffAdder</geneClass>
         <label>eternal core</label>
         <labelShortAdj>eternal-core</labelShortAdj>
-        <description>Provides the foundation for eternal composition.</description>
+        <description>Carriers of this gene have the foundation for eternal composition.</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>1</displayOrderInCategory>
         <biostatMet>-2</biostatMet>
         <biostatCpx>2</biostatCpx>
+        <customEffectDescriptions>
+            <li>Lovin' is more likely to occur</li>
+        </customEffectDescriptions>
+        <lovinMTBFactor>0.75</lovinMTBFactor>
+        <foodPoisoningChanceFactor>0.75</foodPoisoningChanceFactor>
+        <addictionChanceFactor>0.75</addictionChanceFactor>
         <statOffsets>
             <Eternal_Composition>1</Eternal_Composition>
         </statOffsets>
@@ -48,18 +56,43 @@
     </GeneDef>
 
     <GeneDef MayRequire="EBSG.Framework">
+        <defName>Eternal-Aging</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>eternal aging</label>
+        <labelShortAdj>eternal-aging</labelShortAdj>
+        <description>Carriers of this gene have an extended lifespan</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>2</displayOrderInCategory>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>2</biostatCpx>
+        <statOffsets>
+            <Eternal_Composition>0.33333333333</Eternal_Composition>
+        </statOffsets>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Aging</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef MayRequire="EBSG.Framework">
         <defName>Eternal-Speed</defName>
         <geneClass>EBSGFramework.HediffAdder</geneClass>
         <label>eternal speed</label>
         <labelShortAdj>eternal-speed</labelShortAdj>
-        <description>Provides enhanced speed for an individual.</description>
+        <description>Provides enhanced speed for an individual</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>3</displayOrderInCategory>
         <biostatMet>-2</biostatMet>
         <biostatCpx>2</biostatCpx>
         <statOffsets>
-            <Eternal_Composition>.2</Eternal_Composition>
+            <Eternal_Composition>0.33333333333</Eternal_Composition>
         </statOffsets>
         <modExtensions>
             <li Class="EBSGFramework.EBSGExtension">
@@ -72,23 +105,32 @@
         </modExtensions>
     </GeneDef>
 
-    <HediffDef MayRequire="EBSG.Framework">
-        <defName>Eternal-H-Speed</defName>
-        <hediffClass>HediffWithComps</hediffClass>
-        <label>eternal-speed</label>
-        <description>This hediff provides enhanced physical resilience to its host</description>
-        <stages>
-            <li>
-                <capMods>
+    <GeneDef MayRequire="EBSG.Framework">
+        <defName>EternalToughness</defName>
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <label>eternal toughness</label>
+        <labelShortAdj>eternal-toughness</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>4</displayOrderInCategory>
+        <biostatMet>-5</biostatMet>
+        <biostatCpx>5</biostatCpx>
+        <statOffsets>
+            <Eternal_Composition>0.33333333333</Eternal_Composition>
+        </statOffsets>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
                     <li>
-                        <capacity>Moving</capacity>
-                        <postFactor>1.15</postFactor>
+                        <hediff>Eternal-H-Toughness</hediff>
                     </li>
-                </capMods>
-                <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
+                </hediffsToApply>
             </li>
-        </stages>
-    </HediffDef>
+        </modExtensions>
+    </GeneDef>
+
+    <!-- Hediffs -->
 
     <HediffDef MayRequire="EBSG.Framework">
         <defName>Eternal-H-Core</defName>
@@ -98,10 +140,10 @@
         <stages>
             <li>
                 <statFactors>
-                    <MoveSpeed>1.10</MoveSpeed>
-                    <MeleeDamageFactor>1.10</MeleeDamageFactor>
+                    <MeleeDamageFactor>1.05</MeleeDamageFactor>
                 </statFactors>
                 <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
+
                 <capMods>
                     <li>
                         <capacity>BloodFiltration</capacity>
@@ -127,9 +169,77 @@
                         <capacity>Consciousness</capacity>
                         <postFactor>1.05</postFactor>
                     </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>1.025</postFactor>
+                    </li>
                 </capMods>
                 <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
             </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Aging</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>eternal-aging</label>
+        <description>This hediff provides expanded life span</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <LifespanFactor>2</LifespanFactor>
+                </statFactors>
+                <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Speed</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>eternal-speed</label>
+        <description>This hediff provides enhanced physical speed to its host</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>1.20</postFactor>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>Eternal-H-Toughness</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>eternal-toughness</label>
+        <description>This hediff provides enhanced physical resilience to its host</description>
+        <stages>
+        <li>
+            <painFactor>0.90</painFactor>
+            <damageFactors>
+                <Flame>0.90</Flame>
+            </damageFactors>
+            <statFactors>
+                <IncomingDamageFactor>0.75</IncomingDamageFactor>
+                <StaggerDurationFactor>0.75</StaggerDurationFactor>
+                <Flammability>0.75</Flammability>
+            </statFactors>
+            <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
+            
+            <statOffsets>
+                <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+                <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+                <PainShockThreshold>0.15</PainShockThreshold>
+                
+                <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+                <ComfyTemperatureMax>15</ComfyTemperatureMax>
+            </statOffsets>
+            <statOffsetEffectMultiplier>Eternal_Composition</statOffsetEffectMultiplier>
+        </li>
         </stages>
     </HediffDef>
     
