@@ -11,16 +11,8 @@
     <inheritable>true</inheritable>
     <genes>
       <li>EternalAging</li>
-      <li>EternalHealing</li>
-      <li>EternalImmunity</li>
-      <li>EternalPhysiology</li>
-      <li>EternalReproduction</li>
       <li>EternalToughness</li>
-      <li>EternalSenses</li>
-      <li>EternalCombatInstinct</li>
-      <li>EternalIntellect</li>
-      <li>EternalAgeEvolution</li>
-      <li>EternalEvolvingCombat</li>
+      <li>EternalSpeed</li>
       <li>EternalCore</li>
     </genes>
   </XenotypeDef>
