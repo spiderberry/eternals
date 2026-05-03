@@ -24,26 +24,54 @@
 
     <!-- Genes -->
 
-    <GeneDef MayRequire="EBSG.Framework">
-        <defName>Eternal-Core</defName>
+    <GeneDef Name="Eternal-Core-Base" Abstract="True" MayRequire="EBSG.Framework">
         <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <displayCategory>Eternal</displayCategory>
+        <iconPath>G-IDK</iconPath>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>6</biostatCpx>
+        <statOffsets>
+            <Eternal_Composition>1</Eternal_Composition>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef Name="Eternal-Power-Base" Abstract="True" MayRequire="EBSG.Framework">
+        <geneClass>EBSGFramework.HediffAdder</geneClass>
+        <displayCategory>Eternal</displayCategory>
+        <iconPath>G-IDK</iconPath>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>6</biostatCpx>
+        <statOffsets>
+            <Eternal_Composition>0.33333333333</Eternal_Composition>
+        </statOffsets>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Core-Base">
+        <defName>Eternal-Core</defName>
         <label>eternal core</label>
         <labelShortAdj>eternal-core</labelShortAdj>
         <description>Carriers of this gene have the foundation for eternal composition.</description>
-        <iconPath>G-IDK</iconPath>
-        <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>1</displayOrderInCategory>
-        <biostatMet>-2</biostatMet>
-        <biostatCpx>2</biostatCpx>
+        <biostatMet>2</biostatMet>
+        <biostatCpx>18</biostatCpx>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>eternal</symbol></li>
+            </prefixSymbols>
+            <wholeNameSymbols>
+                <li><symbol>∞</symbol></li>
+                <li><symbol>eternal</symbol></li>
+            </wholeNameSymbols>
+            <suffixSymbols>
+                <li><symbol>eternal</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
         <customEffectDescriptions>
             <li>Lovin' is more likely to occur</li>
         </customEffectDescriptions>
         <lovinMTBFactor>0.75</lovinMTBFactor>
         <foodPoisoningChanceFactor>0.75</foodPoisoningChanceFactor>
         <addictionChanceFactor>0.75</addictionChanceFactor>
-        <statOffsets>
-            <Eternal_Composition>1</Eternal_Composition>
-        </statOffsets>
         <modExtensions>
             <li Class="EBSGFramework.EBSGExtension">
                 <hediffsToApply>
@@ -55,20 +83,24 @@
         </modExtensions>
     </GeneDef>
 
-    <GeneDef MayRequire="EBSG.Framework">
+    <GeneDef ParentName="Eternal-Power-Base">
         <defName>Eternal-Aging</defName>
-        <geneClass>EBSGFramework.HediffAdder</geneClass>
         <label>eternal aging</label>
         <labelShortAdj>eternal-aging</labelShortAdj>
         <description>Carriers of this gene have an extended lifespan</description>
-        <iconPath>G-IDK</iconPath>
-        <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>2</displayOrderInCategory>
-        <biostatMet>-2</biostatMet>
-        <biostatCpx>2</biostatCpx>
-        <statOffsets>
-            <Eternal_Composition>0.33333333333</Eternal_Composition>
-        </statOffsets>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>everlasting</symbol></li>
+                <li><symbol>timeless</symbol></li>
+                <li><symbol>endless</symbol></li>
+                <li><symbol>immortal</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>temporal</symbol></li>
+                <li><symbol>chronos</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
         <modExtensions>
             <li Class="EBSGFramework.EBSGExtension">
                 <hediffsToApply>
@@ -80,20 +112,26 @@
         </modExtensions>
     </GeneDef>
 
-    <GeneDef MayRequire="EBSG.Framework">
+    <GeneDef ParentName="Eternal-Power-Base">
         <defName>Eternal-Speed</defName>
-        <geneClass>EBSGFramework.HediffAdder</geneClass>
         <label>eternal speed</label>
         <labelShortAdj>eternal-speed</labelShortAdj>
         <description>Provides enhanced speed for an individual</description>
-        <iconPath>G-IDK</iconPath>
-        <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>3</displayOrderInCategory>
-        <biostatMet>-2</biostatMet>
-        <biostatCpx>2</biostatCpx>
-        <statOffsets>
-            <Eternal_Composition>0.33333333333</Eternal_Composition>
-        </statOffsets>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>quick</symbol></li>
+                <li><symbol>fast</symbol></li>
+                <li><symbol>speedy</symbol></li>
+                <li><symbol>swift</symbol></li>
+                <li><symbol>rapid</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>runner</symbol></li>
+                <li><symbol>speedy</symbol></li>
+                <li><symbol>swifter</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
         <modExtensions>
             <li Class="EBSGFramework.EBSGExtension">
                 <hediffsToApply>
@@ -105,20 +143,30 @@
         </modExtensions>
     </GeneDef>
 
-    <GeneDef MayRequire="EBSG.Framework">
+    <GeneDef ParentName="Eternal-Power-Base">
         <defName>EternalToughness</defName>
-        <geneClass>EBSGFramework.HediffAdder</geneClass>
         <label>eternal toughness</label>
         <labelShortAdj>eternal-toughness</labelShortAdj>
         <description>Carriers of this gene have enhanced physical resilience, making them more resistant to damage and injury.</description>
-        <iconPath>G-IDK</iconPath>
-        <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>4</displayOrderInCategory>
-        <biostatMet>-5</biostatMet>
-        <biostatCpx>5</biostatCpx>
-        <statOffsets>
-            <Eternal_Composition>0.33333333333</Eternal_Composition>
-        </statOffsets>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>tough</symbol></li>
+                <li><symbol>sturdy</symbol></li>
+                <li><symbol>durable</symbol></li>
+                <li><symbol>hardy</symbol></li>
+                <li><symbol>resilient</symbol></li>
+                <li><symbol>unbreakable</symbol></li>
+                <li><symbol>indestructible</symbol></li>
+                <li><symbol>invincible</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>brick</symbol></li>
+                <li><symbol>brute</symbol></li>
+                <li><symbol>tank</symbol></li>
+                <li><symbol>defender</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
         <modExtensions>
             <li Class="EBSGFramework.EBSGExtension">
                 <hediffsToApply>
@@ -130,48 +178,125 @@
         </modExtensions>
     </GeneDef>
 
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalEvolvingCombat</defName>
+        <label>eternal evolving combat</label>
+        <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>5</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>combat</symbol></li>
+                <li><symbol>evolve</symbol></li>
+                <li><symbol>adapt</symbol></li>
+                <li><symbol>warrior</symbol></li>
+                <li><symbol>champion</symbol></li>
+                <li><symbol>carnage</symbol></li>
+            </prefixSymbols>
+            <wholeNameSymbols>
+                <li><symbol>saitama</symbol></li>
+                <li><symbol>evolving warrior</symbol></li>
+            </wholeNameSymbols>
+            <suffixSymbols>
+                <li><symbol>fighter</symbol></li>
+                <li><symbol>combatant</symbol></li>
+                <li><symbol>warrior</symbol></li>
+                <li><symbol>champion</symbol></li>
+                <li><symbol>gladiator</symbol></li>
+                <li><symbol>duelist</symbol></li>
+                <li><symbol>slayer</symbol></li>
+                <li><symbol>destroyer</symbol></li>
+                <li><symbol>conqueror</symbol></li>
+                <li><symbol>vanquisher</symbol></li>
+                <li><symbol>assailant</symbol></li>
+                <li><symbol>mercenary</symbol></li>
+                <li><symbol>marauder</symbol></li>
+                <li><symbol>raider</symbol></li>
+                <li><symbol>reaver</symbol></li>
+                <li><symbol>devastator</symbol></li>
+                <li><symbol>annihilator</symbol></li>
+                <li><symbol>obliterator</symbol></li>
+                <li><symbol>executioner</symbol></li>
+                <li><symbol>slaughterer</symbol></li>
+                <li><symbol>butcher</symbol></li>
+                <li><symbol>berserker</symbol></li>
+                <li><symbol>brawler</symbol></li>
+                <li><symbol>bruiser</symbol></li>
+                <li><symbol>bully</symbol></li>
+                <li><symbol>soldier</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>EternalCombatAdaptation</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalAgeEvolution</defName>
+        <label>eternal age evolution</label>
+        <description>Grows stronger as the pawn gets older.</description>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>6</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
     <!-- Hediffs -->
 
-    <HediffDef MayRequire="EBSG.Framework">
-        <defName>Eternal-H-Core</defName>
+    <HediffDef Name="Eternal-H-Base"  Abstract="True" MayRequire="EBSG.Framework">
         <hediffClass>HediffWithComps</hediffClass>
+    </HediffDef>
+    
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-Core</defName>
         <label>eternal-core</label>
         <description>This hediff provides enhanced physical resilience to its host</description>
         <stages>
             <li>
                 <statFactors>
-                    <MeleeDamageFactor>1.05</MeleeDamageFactor>
+                    <MeleeDamageFactor>1.10</MeleeDamageFactor>
                 </statFactors>
                 <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
 
                 <capMods>
                     <li>
                         <capacity>BloodFiltration</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.10</postFactor>
                     </li>
                     <li>
                         <capacity>BloodPumping</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.10</postFactor>
                     </li>
                     <li>
                         <capacity>Hearing</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.10</postFactor>
                     </li>
                     <li>
                         <capacity>Sight</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.10</postFactor>
                     </li>
                     <li>
                         <capacity>Breathing</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.10</postFactor>
                     </li>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.10</postFactor>
                     </li>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.025</postFactor>
+                        <postFactor>1.05</postFactor>
                     </li>
                 </capMods>
                 <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
@@ -179,9 +304,8 @@
         </stages>
     </HediffDef>
 
-    <HediffDef MayRequire="EBSG.Framework">
+    <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Aging</defName>
-        <hediffClass>HediffWithComps</hediffClass>
         <label>eternal-aging</label>
         <description>This hediff provides expanded life span</description>
         <stages>
@@ -194,9 +318,8 @@
         </stages>
     </HediffDef>
 
-    <HediffDef MayRequire="EBSG.Framework">
+    <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Speed</defName>
-        <hediffClass>HediffWithComps</hediffClass>
         <label>eternal-speed</label>
         <description>This hediff provides enhanced physical speed to its host</description>
         <stages>
@@ -204,7 +327,7 @@
                 <capMods>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.20</postFactor>
+                        <postFactor>1.25</postFactor>
                     </li>
                 </capMods>
                 <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
@@ -212,35 +335,130 @@
         </stages>
     </HediffDef>
 
-    <HediffDef MayRequire="EBSG.Framework">
+    <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Toughness</defName>
-        <hediffClass>HediffWithComps</hediffClass>
         <label>eternal-toughness</label>
         <description>This hediff provides enhanced physical resilience to its host</description>
         <stages>
-        <li>
-            <painFactor>0.90</painFactor>
-            <damageFactors>
-                <Flame>0.90</Flame>
-            </damageFactors>
-            <statFactors>
-                <IncomingDamageFactor>0.75</IncomingDamageFactor>
-                <StaggerDurationFactor>0.75</StaggerDurationFactor>
-                <Flammability>0.75</Flammability>
-            </statFactors>
-            <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
-            
-            <statOffsets>
-                <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
-                <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
-                <PainShockThreshold>0.15</PainShockThreshold>
+            <li>
+                <painFactor>0.90</painFactor>
+                <damageFactors>
+                    <Flame>0.90</Flame>
+                </damageFactors>
+                <statFactors>
+                    <IncomingDamageFactor>0.75</IncomingDamageFactor>
+                    <StaggerDurationFactor>0.75</StaggerDurationFactor>
+                    <Flammability>0.75</Flammability>
+                </statFactors>
+                <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
                 
-                <ComfyTemperatureMin>-15</ComfyTemperatureMin>
-                <ComfyTemperatureMax>15</ComfyTemperatureMax>
-            </statOffsets>
-            <statOffsetEffectMultiplier>Eternal_Composition</statOffsetEffectMultiplier>
-        </li>
+                <statOffsets>
+                    <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+                    <PainShockThreshold>0.15</PainShockThreshold>
+                    
+                    <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>15</ComfyTemperatureMax>
+                </statOffsets>
+                <statOffsetEffectMultiplier>Eternal_Composition</statOffsetEffectMultiplier>
+            </li>
         </stages>
+    </HediffDef>
+
+    <HediffDef Name="EternitySpecialHediffBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+    </HediffDef>
+
+    <HediffDef Name="EternityEvolvingBase" ParentName="EternitySpecialHediffBase" Abstract="True" MayRequire="EBSG.Framework">
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Evolution progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="EternityEvolvingBase" MayRequire="EBSG.Framework">
+        <defName>LethalEvolution</defName>
+        <label>lethal evolution</label>
+        <description>This pawn genes constantly evolve as they kill more enemies</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.1</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="EternitySpecialHediffBase" MayRequire="EBSG.Framework">
+        <defName>EternalCombatAdaptation</defName>
+        <label>eternal combat adaptation</label>
+        <description>Each time this pawn is hit they become more resilient, and every time they kill a humanlike foe they become more lethal overall.</description>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>100</maxSeverity>
+        <stages>
+            <li>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <statFactors>
+                    <IncomingDamageFactor>0.99</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                <prependString>Toughness Progress : </prependString>
+                <appendString>%</appendString>
+                <roundDigits>0</roundDigits>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+                <cooldownTicks>30</cooldownTicks>
+                <severityChangeFactor>0.01</severityChangeFactor>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+                <hediff>LethalEvolution</hediff>
+                <severityForFirstKill>0.1</severityForFirstKill>
+                <severityPerExtraKill>0.1</severityPerExtraKill>
+                <allowMechanoids>False</allowMechanoids>
+                <allowAnimals>False</allowAnimals>
+                <allowDryads>False</allowDryads>
+                <allowInsects>False</allowInsects>
+                <allowEntities>False</allowEntities>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>AgeEvolution</defName>
+        <label>age evolution</label>
+        <description>This hediff increases in severity as the pawn gets older, representing a power that grows as the carrier ages.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+         <stages>
+            <li>
+                <statOffsets>
+                    <EBSG_OutgoingDamageFactor>0.01</EBSG_OutgoingDamageFactor>
+                </statOffsets>
+                <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+            </li>
+        </stages>
+            <comps>
+                <li Class="EBSGFramework.HediffCompProperties_DisplaySeverity">
+                    <prependString>Age-based power : </prependString>
+                    <appendString>%</appendString>
+                    <roundDigits>0</roundDigits>
+                </li>
+                <li Class="EBSGFramework.HediffCompProperties_SeverityByAge" />
+            </comps>
     </HediffDef>
     
 </Defs>
