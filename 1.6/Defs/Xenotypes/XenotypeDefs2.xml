@@ -10,10 +10,11 @@
     <combatPowerFactor>5</combatPowerFactor>
     <inheritable>true</inheritable>
     <genes>
+      <li>EternalCore</li>
+      <li>EternalAgeEvolution</li>
       <li>EternalAging</li>
       <li>EternalToughness</li>
       <li>EternalSpeed</li>
-      <li>EternalCore</li>
     </genes>
   </XenotypeDef>
 

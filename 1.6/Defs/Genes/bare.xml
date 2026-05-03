@@ -11,7 +11,7 @@
     <!-- Stat -->
 
     <StatDef>
-        <defName>Eternal_Composition</defName>
+        <defName>EternalComposition</defName>
         <label>eternal composition</label>
         <description>Represents the eternal composition for an individual</description>
         <category>BasicsPawn</category>
@@ -31,7 +31,7 @@
         <biostatMet>-2</biostatMet>
         <biostatCpx>6</biostatCpx>
         <statOffsets>
-            <Eternal_Composition>1</Eternal_Composition>
+            <EternalComposition>1</EternalComposition>
         </statOffsets>
     </GeneDef>
 
@@ -42,12 +42,12 @@
         <biostatMet>-2</biostatMet>
         <biostatCpx>6</biostatCpx>
         <statOffsets>
-            <Eternal_Composition>0.33333333333</Eternal_Composition>
+            <EternalComposition>0.33333333333</EternalComposition>
         </statOffsets>
     </GeneDef>
 
     <GeneDef ParentName="Eternal-Core-Base">
-        <defName>Eternal-Core</defName>
+        <defName>EternalCore</defName>
         <label>eternal core</label>
         <labelShortAdj>eternal-core</labelShortAdj>
         <description>Carriers of this gene have the foundation for eternal composition.</description>
@@ -84,7 +84,7 @@
     </GeneDef>
 
     <GeneDef ParentName="Eternal-Power-Base">
-        <defName>Eternal-Aging</defName>
+        <defName>EternalAging</defName>
         <label>eternal aging</label>
         <labelShortAdj>eternal-aging</labelShortAdj>
         <description>Carriers of this gene have an extended lifespan</description>
@@ -113,7 +113,7 @@
     </GeneDef>
 
     <GeneDef ParentName="Eternal-Power-Base">
-        <defName>Eternal-Speed</defName>
+        <defName>EternalSpeed</defName>
         <label>eternal speed</label>
         <labelShortAdj>eternal-speed</labelShortAdj>
         <description>Provides enhanced speed for an individual</description>
@@ -256,6 +256,9 @@
 
     <HediffDef Name="Eternal-H-Base"  Abstract="True" MayRequire="EBSG.Framework">
         <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
     </HediffDef>
     
     <HediffDef ParentName="Eternal-H-Base">
@@ -267,7 +270,7 @@
                 <statFactors>
                     <MeleeDamageFactor>1.10</MeleeDamageFactor>
                 </statFactors>
-                <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
 
                 <capMods>
                     <li>
@@ -299,7 +302,7 @@
                         <postFactor>1.05</postFactor>
                     </li>
                 </capMods>
-                <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
+                <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
@@ -313,7 +316,7 @@
                 <statFactors>
                     <LifespanFactor>2</LifespanFactor>
                 </statFactors>
-                <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
@@ -330,7 +333,7 @@
                         <postFactor>1.25</postFactor>
                     </li>
                 </capMods>
-                <capacityFactorEffectMultiplier>Eternal_Composition</capacityFactorEffectMultiplier>
+                <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
@@ -350,7 +353,7 @@
                     <StaggerDurationFactor>0.75</StaggerDurationFactor>
                     <Flammability>0.75</Flammability>
                 </statFactors>
-                <statFactorEffectMultiplier>Eternal_Composition</statFactorEffectMultiplier>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
                 
                 <statOffsets>
                     <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
@@ -360,7 +363,7 @@
                     <ComfyTemperatureMin>-15</ComfyTemperatureMin>
                     <ComfyTemperatureMax>15</ComfyTemperatureMax>
                 </statOffsets>
-                <statOffsetEffectMultiplier>Eternal_Composition</statOffsetEffectMultiplier>
+                <statOffsetEffectMultiplier>EternalComposition</statOffsetEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
@@ -435,20 +438,17 @@
         </comps>
     </HediffDef>
 
-    <HediffDef MayRequire="EBSG.Framework">
+    <HediffDef ParentName="Eternal-H-Base">
         <defName>AgeEvolution</defName>
         <label>age evolution</label>
         <description>This hediff increases in severity as the pawn gets older, representing a power that grows as the carrier ages.</description>
-        <hediffClass>HediffWithComps</hediffClass>
-		<scenarioCanAdd>False</scenarioCanAdd>
-		<isBad>False</isBad>
-        <everCurableByItem>False</everCurableByItem>
          <stages>
             <li>
                 <statOffsets>
-                    <EBSG_OutgoingDamageFactor>0.01</EBSG_OutgoingDamageFactor>
+                    <EBSG_OutgoingDamageFactor>0.025</EBSG_OutgoingDamageFactor>
                 </statOffsets>
                 <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
             </li>
         </stages>
             <comps>
