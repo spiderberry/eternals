@@ -11,10 +11,15 @@
     <inheritable>true</inheritable>
     <genes>
       <li>EternalCore</li>
-      <li>EternalAgeEvolution</li>
       <li>EternalAging</li>
-      <li>EternalToughness</li>
       <li>EternalSpeed</li>
+      <li>EternalToughness</li>
+      <li>EternalHealing</li>
+      <li>EternalImmunity</li>
+      <li>EternalStrength</li>
+      <li>EternalEvolvingCombat</li>
+      <li>EternalLethalEvolution</li>
+      <li>EternalAgeEvolution</li>   
     </genes>
   </XenotypeDef>
 

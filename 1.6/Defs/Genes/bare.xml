@@ -50,7 +50,7 @@
         <defName>EternalCore</defName>
         <label>eternal core</label>
         <labelShortAdj>eternal-core</labelShortAdj>
-        <description>Carriers of this gene have the foundation for eternal composition.</description>
+        <description>Carriers of this gene recieve enhanced physical capabilities, further enhancing their physical performance</description>
         <displayOrderInCategory>1</displayOrderInCategory>
         <biostatMet>2</biostatMet>
         <biostatCpx>18</biostatCpx>
@@ -179,11 +179,160 @@
     </GeneDef>
 
     <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalHealing</defName>
+        <label>eternal healing</label>
+        <labelShortAdj>eternal-hs</labelShortAdj>
+        <description>Carriers of this gene heal wounds at an absolutely absurd rate and any bleeding stops nearly instantly.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>5</displayOrderInCategory>
+        <preventPermanentWounds>false</preventPermanentWounds>
+        <geneClass>Gene_Clotting</geneClass>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>healing</symbol></li>
+                <li><symbol>resilient</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>healer</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Healing</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalImmunity</defName>
+        <label>eternal immunity</label>
+        <labelShortAdj>eternal-immunity</labelShortAdj>
+        <description>Carriers of this gene have enhanced immune system functionality, making them more resistant to diseases and toxins.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>6</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>immunity</symbol></li>
+                <li><symbol>immune</symbol></li>
+                <li><symbol>resistant</symbol></li>
+                <li><symbol>resilient</symbol></li>
+            </prefixSymbols>
+        </symbolPack>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Immunity</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalStrength</defName>
+        <label>eternal strength</label>
+        <labelShortAdj>eternal-strength</labelShortAdj>
+        <description>Carriers of this gene have enhanced physical strength, making them more powerful in combat and labor.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>7</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>strong</symbol></li>
+                <li><symbol>powerful</symbol></li>
+                <li><symbol>mighty</symbol></li>
+                <li><symbol>muscular</symbol></li>
+                <li><symbol>beefy</symbol></li>
+                <li><symbol>buff</symbol></li>
+                <li><symbol>jacked</symbol></li>
+                <li><symbol>hulked</symbol></li>
+                <li><symbol>swole</symbol></li>
+                <li><symbol>brolic</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>meathead</symbol></li>
+                <li><symbol>strongman</symbol></li>
+                <li><symbol>powerhouse</symbol></li>
+                <li><symbol>brute</symbol></li>
+                <li><symbol>beast</symbol></li>
+                <li><symbol>juggernaut</symbol></li>
+                <li><symbol>colossus</symbol></li>
+                <li><symbol>goliath</symbol></li>
+                <li><symbol>titan</symbol></li>
+                <li><symbol>hulk</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Strength</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
         <defName>EternalEvolvingCombat</defName>
         <label>eternal evolving combat</label>
         <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
         <iconPath>Powers/Gene_EverGrowingPower</iconPath>
-        <displayOrderInCategory>5</displayOrderInCategory>
+        <displayOrderInCategory>600</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>evolve</symbol></li>
+                <li><symbol>adapt</symbol></li>
+                <li><symbol>warrior</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>warrior</symbol></li>
+                <li><symbol>soldier</symbol></li>
+                 <li><symbol>berserker</symbol></li>
+                <li><symbol>brawler</symbol></li>
+                <li><symbol>bruiser</symbol></li>
+                <li><symbol>bully</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>EternalCombatAdaptation</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalAgeEvolution</defName>
+        <label>eternal age evolution</label>
+        <description>Grows stronger as the pawn gets older.</description>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>700</displayOrderInCategory>
+        <customEffectDescriptions>
+            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+        </customEffectDescriptions>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalLethalEvolution</defName>
+        <label>eternal lethal evolution</label>
+        <description>Grows stronger as the pawn gets more kills.</description>
+        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
+        <displayOrderInCategory>800</displayOrderInCategory>
         <customEffectDescriptions>
             <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
         </customEffectDescriptions>
@@ -214,40 +363,16 @@
                 <li><symbol>assailant</symbol></li>
                 <li><symbol>mercenary</symbol></li>
                 <li><symbol>marauder</symbol></li>
-                <li><symbol>raider</symbol></li>
-                <li><symbol>reaver</symbol></li>
                 <li><symbol>devastator</symbol></li>
                 <li><symbol>annihilator</symbol></li>
                 <li><symbol>obliterator</symbol></li>
                 <li><symbol>executioner</symbol></li>
-                <li><symbol>slaughterer</symbol></li>
-                <li><symbol>butcher</symbol></li>
-                <li><symbol>berserker</symbol></li>
-                <li><symbol>brawler</symbol></li>
-                <li><symbol>bruiser</symbol></li>
-                <li><symbol>bully</symbol></li>
                 <li><symbol>soldier</symbol></li>
             </suffixSymbols>
         </symbolPack>
         <modExtensions>
 			<li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply><li><hediff>EternalCombatAdaptation</hediff></li></hediffsToApply>
-			</li>
-		</modExtensions>
-    </GeneDef>
-
-    <GeneDef ParentName="Eternal-Power-Base">
-        <defName>EternalAgeEvolution</defName>
-        <label>eternal age evolution</label>
-        <description>Grows stronger as the pawn gets older.</description>
-        <iconPath>Powers/Gene_EverGrowingPower</iconPath>
-        <displayOrderInCategory>6</displayOrderInCategory>
-        <customEffectDescriptions>
-            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
-        </customEffectDescriptions>
-        <modExtensions>
-			<li Class="EBSGFramework.EBSGExtension">
-				<hediffsToApply><li><hediff>AgeEvolution</hediff></li></hediffsToApply>
+				<hediffsToApply><li><hediff>EternalLethalEvolution</hediff></li></hediffsToApply>
 			</li>
 		</modExtensions>
     </GeneDef>
@@ -264,11 +389,13 @@
     <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Core</defName>
         <label>eternal-core</label>
-        <description>This hediff provides enhanced physical resilience to its host</description>
+        <description>This hediff provides enhanced physical capabilities</description>
         <stages>
             <li>
                 <statFactors>
                     <MeleeDamageFactor>1.10</MeleeDamageFactor>
+                    <Fertility>2.0</Fertility>
+                    <PawnBeauty>2</PawnBeauty>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
 
@@ -310,7 +437,7 @@
     <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Aging</defName>
         <label>eternal-aging</label>
-        <description>This hediff provides expanded life span</description>
+        <description>This hediff extends life span</description>
         <stages>
             <li>
                 <statFactors>
@@ -324,7 +451,7 @@
     <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Speed</defName>
         <label>eternal-speed</label>
-        <description>This hediff provides enhanced physical speed to its host</description>
+        <description>This hediff provides enhanced physical speed</description>
         <stages>
             <li>
                 <capMods>
@@ -341,7 +468,7 @@
     <HediffDef ParentName="Eternal-H-Base">
         <defName>Eternal-H-Toughness</defName>
         <label>eternal-toughness</label>
-        <description>This hediff provides enhanced physical resilience to its host</description>
+        <description>This hediff provides enhanced physical resilience</description>
         <stages>
             <li>
                 <painFactor>0.90</painFactor>
@@ -368,6 +495,62 @@
         </stages>
     </HediffDef>
 
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-Healing</defName>
+        <label>eternal-healing</label>
+        <description>This hediff provides enhanced healing</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <InjuryHealingFactor>2.5</InjuryHealingFactor>
+                </statFactors>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+
+                <capMods>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-Immunity</defName>
+        <label>eternal-immunity</label>
+        <description>This hediff provides enhanced immunity</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <ImmunityGainSpeed>2</ImmunityGainSpeed>
+                    <RawNutritionFactor>2</RawNutritionFactor>
+                    <CancerRate>0.50</CancerRate>
+                    <ToxicResistance>1.75</ToxicResistance>
+                    <ToxicEnvironmentResistance>1.75</ToxicEnvironmentResistance>
+                </statFactors>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-Strength</defName>
+        <label>eternal-strength</label>
+        <description>This hediff provides enhanced strength</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <MeleeDamageFactor>1.5</MeleeDamageFactor>
+                    <CarryingCapacity>1.5</CarryingCapacity>
+                    <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.5</VEF_MassCarryCapacity>
+                </statFactors>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
     <HediffDef Name="EternitySpecialHediffBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
 		<scenarioCanAdd>False</scenarioCanAdd>
@@ -387,10 +570,14 @@
         </comps>
     </HediffDef>
 
-    <HediffDef ParentName="EternityEvolvingBase" MayRequire="EBSG.Framework">
+    <HediffDef MayRequire="EBSG.Framework">
         <defName>LethalEvolution</defName>
-        <label>lethal evolution</label>
-        <description>This pawn genes constantly evolve as they kill more enemies</description>
+        <label>eternal lethal evolution</label>
+        <description>Every time this pawn kills an enemy they become more lethal</description>
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
         <stages>
             <li>
                 <statOffsets>
@@ -401,10 +588,37 @@
         </stages>
     </HediffDef>
 
+    <HediffDef MayRequire="EBSG.Framework">
+        <defName>EternalLethalEvolution</defName>
+        <label>hidden lethal evolution</label>
+        <description>Every time this pawn kills an enemy they become more lethal</description>
+        <hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>False</scenarioCanAdd>
+		<isBad>False</isBad>
+        <everCurableByItem>False</everCurableByItem>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+                <hediff>LethalEvolution</hediff>
+                <severityForFirstKill>0.1</severityForFirstKill>
+                <severityPerExtraKill>0.1</severityPerExtraKill>
+                <allowMechanoids>False</allowMechanoids>
+                <allowAnimals>False</allowAnimals>
+                <allowDryads>False</allowDryads>
+                <allowInsects>False</allowInsects>
+                <allowEntities>False</allowEntities>
+            </li>
+        </comps>
+    </HediffDef>
+
     <HediffDef ParentName="EternitySpecialHediffBase" MayRequire="EBSG.Framework">
         <defName>EternalCombatAdaptation</defName>
         <label>eternal combat adaptation</label>
-        <description>Each time this pawn is hit they become more resilient, and every time they kill a humanlike foe they become more lethal overall.</description>
+        <description>Each time this pawn is hit they become more resilient.</description>
         <initialSeverity>1</initialSeverity>
         <maxSeverity>100</maxSeverity>
         <stages>
@@ -425,16 +639,6 @@
                 <cooldownTicks>30</cooldownTicks>
                 <severityChangeFactor>0.01</severityChangeFactor>
             </li>
-            <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
-                <hediff>LethalEvolution</hediff>
-                <severityForFirstKill>0.1</severityForFirstKill>
-                <severityPerExtraKill>0.1</severityPerExtraKill>
-                <allowMechanoids>False</allowMechanoids>
-                <allowAnimals>False</allowAnimals>
-                <allowDryads>False</allowDryads>
-                <allowInsects>False</allowInsects>
-                <allowEntities>False</allowEntities>
-            </li>
         </comps>
     </HediffDef>
 
@@ -445,7 +649,7 @@
          <stages>
             <li>
                 <statOffsets>
-                    <EBSG_OutgoingDamageFactor>0.025</EBSG_OutgoingDamageFactor>
+                    <EBSG_OutgoingDamageFactor>0.05</EBSG_OutgoingDamageFactor>
                 </statOffsets>
                 <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
