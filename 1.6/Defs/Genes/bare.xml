@@ -281,6 +281,132 @@
     </GeneDef>
 
     <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalSenses</defName>
+        <label>eternal senses</label>
+        <labelShortAdj>eternal-senses</labelShortAdj>
+        <description>Carriers of this gene have enhanced sensory perception, making them more aware of their surroundings.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>8</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>perceptive</symbol></li>
+                <li><symbol>keen</symbol></li>
+                <li><symbol>sharp</symbol></li>
+                <li><symbol>acute</symbol></li>
+                <li><symbol>attentive</symbol></li>
+                <li><symbol>observant</symbol></li>
+                <li><symbol>vigilant</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>perceiver</symbol></li>
+                <li><symbol>observer</symbol></li>
+                <li><symbol>sentinel</symbol></li>
+                <li><symbol>watcher</symbol></li>
+                <li><symbol>scout</symbol></li>
+                <li><symbol>lookout</symbol></li>
+                <li><symbol>spotter</symbol></li>
+                <li><symbol>tracker</symbol></li>
+                <li><symbol>peeper</symbol></li>
+                <li><symbol>eagle eye</symbol></li>
+                <li><symbol>hawk eye</symbol></li>
+                <li><symbol>noticer</symbol></li>
+                <li><symbol>listener</symbol></li>
+                <li><symbol>nooticer</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Senses</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalIntellect</defName>
+        <label>eternal intellect</label>
+        <labelShortAdj>eternal-intellect</labelShortAdj>
+        <description>Carriers of this gene have an enhanced intellect</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>9</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>genius</symbol></li>
+                <li><symbol>brilliant</symbol></li>
+                <li><symbol>champion</symbol></li>
+                <li><symbol>carnage</symbol></li>
+                <li><symbol>intellectual</symbol></li>
+                <li><symbol>studious</symbol></li>
+                <li><symbol>scholarly</symbol></li>
+                <li><symbol>wise</symbol></li>
+                <li><symbol>knowledgeable</symbol></li>
+                <li><symbol>clever</symbol></li>
+                <li><symbol>smart</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>braniac</symbol></li>
+                <li><symbol>genius</symbol></li>
+                <li><symbol>intellectual</symbol></li>
+                <li><symbol>thinker</symbol></li>
+                <li><symbol>scholar</symbol></li>
+                <li><symbol>intellect</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-Intellect</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalCombatInstinct</defName>
+        <label>eternal combat instinct</label>
+        <labelShortAdj>eternal-combat-instinct</labelShortAdj>
+        <description>Carriers of this gene have an enhanced combat instinct, making them more effective in battle.</description>
+        <iconPath>G-IDK</iconPath>
+        <displayCategory>Eternal</displayCategory>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li><symbol>combat</symbol></li>
+                <li><symbol>warrior</symbol></li>
+                <li><symbol>champion</symbol></li>
+                <li><symbol>carnage</symbol></li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li><symbol>fighter</symbol></li>
+                <li><symbol>combatant</symbol></li>
+                <li><symbol>warrior</symbol></li>
+                <li><symbol>champion</symbol></li>
+                <li><symbol>gladiator</symbol></li>
+                <li><symbol>duelist</symbol></li>
+                <li><symbol>assailant</symbol></li>
+                <li><symbol>mercenary</symbol></li>
+                <li><symbol>soldier</symbol></li>
+            </suffixSymbols>
+        </symbolPack>
+        <modExtensions>
+            <li Class="EBSGFramework.EBSGExtension">
+                <hediffsToApply>
+                    <li>
+                        <hediff>Eternal-H-CombatInstinct</hediff>
+                    </li>
+                </hediffsToApply>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef ParentName="Eternal-Power-Base">
         <defName>EternalEvolvingCombat</defName>
         <label>eternal evolving combat</label>
         <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
@@ -393,8 +519,8 @@
         <stages>
             <li>
                 <statFactors>
-                    <MeleeDamageFactor>1.10</MeleeDamageFactor>
-                    <Fertility>2.0</Fertility>
+                    <MeleeDamageFactor>1.1</MeleeDamageFactor>
+                    <Fertility>2</Fertility>
                     <PawnBeauty>2</PawnBeauty>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
@@ -545,6 +671,78 @@
                     <MeleeDamageFactor>1.5</MeleeDamageFactor>
                     <CarryingCapacity>1.5</CarryingCapacity>
                     <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.5</VEF_MassCarryCapacity>
+                </statFactors>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-Senses</defName>
+        <label>eternal-senses</label>
+        <description>This hediff provides enhanced senses</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Hearing</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-CombatInstinct</defName>
+        <label>eternal-combat-instinct</label>
+        <description>This hediff provides enhanced combat instincts</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <PawnTrapSpringChance>0.50</PawnTrapSpringChance>
+                    <StaggerDurationFactor>0.5</StaggerDurationFactor>
+                    <MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+                    <AimingDelayFactor>0.75</AimingDelayFactor>
+                    <MeleeDodgeChance>1.5</MeleeDodgeChance>
+                    <MeleeHitChance>1.5</MeleeHitChance>
+                    <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
+                </statFactors>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="Eternal-H-Base">
+        <defName>Eternal-H-Intellect</defName>
+        <label>eternal-intellect</label>
+        <description>This hediff provides enhanced intellect</description>
+        <stages>
+            <li>
+                <statFactors>
+                    <GlobalLearningFactor>1.25</GlobalLearningFactor>
+                    <LearningRateFactor>1.25</LearningRateFactor>
+                    <ResearchSpeed>1.25</ResearchSpeed>
+                    <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+                    <HackingSpeed MayRequire="ludeon.rimworld.ideology">1.25</HackingSpeed>
+                    <MentalBreakThreshold>0.75</MentalBreakThreshold>
+                    <SocialImpact>1.25</SocialImpact>
+                    <TameAnimalChance>1.25</TameAnimalChance>
+                    <TrainAnimalChance>1.25</TrainAnimalChance>
+                    <NegotiationAbility>1.25</NegotiationAbility>
+                    <ConversionPower MayRequire="ludeon.rimworld.ideology">1.25</ConversionPower>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
             </li>
