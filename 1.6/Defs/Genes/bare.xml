@@ -42,7 +42,7 @@
         <biostatMet>-2</biostatMet>
         <biostatCpx>6</biostatCpx>
         <statOffsets>
-            <EternalComposition>0.33333333333</EternalComposition>
+            <EternalComposition>0.08333333333</EternalComposition>
         </statOffsets>
     </GeneDef>
 
@@ -181,13 +181,12 @@
     <GeneDef ParentName="Eternal-Power-Base">
         <defName>EternalHealing</defName>
         <label>eternal healing</label>
-        <labelShortAdj>eternal-hs</labelShortAdj>
-        <description>Carriers of this gene heal wounds at an absolutely absurd rate and any bleeding stops nearly instantly.</description>
+        <labelShortAdj>eternal-healing</labelShortAdj>
+        <description>Carriers of this gene heal wounds at an enhanced rate</description>
         <iconPath>G-IDK</iconPath>
         <displayCategory>Eternal</displayCategory>
         <displayOrderInCategory>5</displayOrderInCategory>
         <preventPermanentWounds>false</preventPermanentWounds>
-        <geneClass>Gene_Clotting</geneClass>
         <symbolPack>
             <prefixSymbols>
                 <li><symbol>healing</symbol></li>
@@ -409,7 +408,7 @@
     <GeneDef ParentName="Eternal-Power-Base">
         <defName>EternalEvolvingCombat</defName>
         <label>eternal evolving combat</label>
-        <description>Supers with this gene constantly grow stronger as they fight more, becoming more durable when hit and stronger when killing humanlike foes.</description>
+        <description>This gene constantly grows stronger as they fight more, becoming more durable when hit</description>
         <iconPath>Powers/Gene_EverGrowingPower</iconPath>
         <displayOrderInCategory>600</displayOrderInCategory>
         <customEffectDescriptions>
@@ -444,7 +443,7 @@
         <iconPath>Powers/Gene_EverGrowingPower</iconPath>
         <displayOrderInCategory>700</displayOrderInCategory>
         <customEffectDescriptions>
-            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+            <li>This gene makes the pawn more lethal as they age</li>
         </customEffectDescriptions>
         <modExtensions>
 			<li Class="EBSGFramework.EBSGExtension">
@@ -460,7 +459,7 @@
         <iconPath>Powers/Gene_EverGrowingPower</iconPath>
         <displayOrderInCategory>800</displayOrderInCategory>
         <customEffectDescriptions>
-            <li>This can take a long time to reach full power, but once they do reach that point, they are nigh unstoppable.</li>
+            <li>This gene makes the pawn more effective in combat as they gain more kills</li>
         </customEffectDescriptions>
         <symbolPack>
             <prefixSymbols>
@@ -627,8 +626,9 @@
         <description>This hediff provides enhanced healing</description>
         <stages>
             <li>
+                <totalBleedFactor>0.875</totalBleedFactor>
                 <statFactors>
-                    <InjuryHealingFactor>2.5</InjuryHealingFactor>
+                    <InjuryHealingFactor>2</InjuryHealingFactor>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
 
@@ -657,6 +657,14 @@
                     <ToxicEnvironmentResistance>1.75</ToxicEnvironmentResistance>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+
+                <capMods>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
             </li>
         </stages>
     </HediffDef>

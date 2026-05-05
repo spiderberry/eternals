@@ -23,6 +23,8 @@
       <li>EternalEvolvingCombat</li>
       <li>EternalLethalEvolution</li>
       <li>EternalAgeEvolution</li>   
+      <li>Superclotting</li>
+      <li MayRequire="RedMattis.BetterGeneInheritance">BGI_PrimaryGenes</li>
     </genes>
   </XenotypeDef>
 
