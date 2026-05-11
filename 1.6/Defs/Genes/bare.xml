@@ -517,8 +517,44 @@
         <description>This hediff provides enhanced physical capabilities</description>
         <stages>
             <li>
+                <painFactor>0.85</painFactor>
+                <damageFactors>
+                    <Flame>0.85</Flame>
+                </damageFactors>
+
                 <statFactors>
-                    <MeleeDamageFactor>1.1</MeleeDamageFactor>
+                    <AimingDelayFactor>0.85</AimingDelayFactor>
+                    <MeleeCooldownFactor>0.85</MeleeCooldownFactor>
+                    <StaggerDurationFactor>0.85</StaggerDurationFactor>
+                    <PawnTrapSpringChance>0.85</PawnTrapSpringChance>
+                    <MentalBreakThreshold>0.85</MentalBreakThreshold>
+                    <CancerRate>0.85</CancerRate>
+                    <IncomingDamageFactor>0.85</IncomingDamageFactor>
+                    <Flammability>0.85</Flammability>
+                    <MoveSpeed>1.1</MoveSpeed>
+                    <InjuryHealingFactor>1.15</InjuryHealingFactor>
+                    <ImmunityGainSpeed>1.15</ImmunityGainSpeed>
+                    <RawNutritionFactor>1.15</RawNutritionFactor>
+                    <ToxicResistance>1.15</ToxicResistance>
+                    <ToxicEnvironmentResistance>1.15</ToxicEnvironmentResistance>
+                    <PainShockThreshold>1.15</PainShockThreshold>
+                    <CarryingCapacity>1.15</CarryingCapacity>
+                    <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.5</VEF_MassCarryCapacity>
+                    <GlobalLearningFactor>1.15</GlobalLearningFactor>
+                    <LearningRateFactor>1.15</LearningRateFactor>
+                    <ResearchSpeed>1.15</ResearchSpeed>
+                    <WorkSpeedGlobal>1.15</WorkSpeedGlobal>
+                    <HackingSpeed MayRequire="ludeon.rimworld.ideology">1.15</HackingSpeed>
+                    <ShootingAccuracyPawn>1.15</ShootingAccuracyPawn>    
+                    <SocialImpact>1.15</SocialImpact>
+                    <TameAnimalChance>1.15</TameAnimalChance>
+                    <TrainAnimalChance>1.15</TrainAnimalChance>
+                    <NegotiationAbility>1.15</NegotiationAbility>
+                    <ConversionPower MayRequire="ludeon.rimworld.ideology">1.25</ConversionPower>
+                    <MeleeDodgeChance>1.15</MeleeDodgeChance>
+                    <MeleeHitChance>1.15</MeleeHitChance>
+                    <MeleeDamageFactor>1.25</MeleeDamageFactor>
+                    <LifespanFactor>1.5</LifespanFactor>
                     <Fertility>2</Fertility>
                     <PawnBeauty>2</PawnBeauty>
                 </statFactors>
@@ -527,34 +563,45 @@
                 <capMods>
                     <li>
                         <capacity>BloodFiltration</capacity>
-                        <postFactor>1.10</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                     <li>
                         <capacity>BloodPumping</capacity>
-                        <postFactor>1.10</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                     <li>
                         <capacity>Hearing</capacity>
-                        <postFactor>1.10</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                     <li>
                         <capacity>Sight</capacity>
-                        <postFactor>1.10</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                     <li>
                         <capacity>Breathing</capacity>
-                        <postFactor>1.10</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <postFactor>1.10</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.05</postFactor>
+                        <postFactor>1.15</postFactor>
                     </li>
                 </capMods>
                 <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
+
+                <statOffsets>
+                    <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.10</ArmorRating_Heat>
+                    <PainShockThreshold>0.10</PainShockThreshold>
+                    
+                    <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>5</ComfyTemperatureMax>
+                </statOffsets>
+                <statOffsetEffectMultiplier>EternalComposition</statOffsetEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
@@ -579,10 +626,15 @@
         <description>This hediff provides enhanced physical speed</description>
         <stages>
             <li>
+                <statFactors>
+                    <MoveSpeed>1.15</MoveSpeed>
+                </statFactors>
+                <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+
                 <capMods>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.25</postFactor>
+                        <postFactor>1.375</postFactor>
                     </li>
                 </capMods>
                 <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
@@ -596,9 +648,9 @@
         <description>This hediff provides enhanced physical resilience</description>
         <stages>
             <li>
-                <painFactor>0.90</painFactor>
+                <painFactor>0.75</painFactor>
                 <damageFactors>
-                    <Flame>0.90</Flame>
+                    <Flame>0.75</Flame>
                 </damageFactors>
                 <statFactors>
                     <IncomingDamageFactor>0.75</IncomingDamageFactor>
@@ -608,9 +660,10 @@
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
                 
                 <statOffsets>
-                    <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
-                    <PainShockThreshold>0.15</PainShockThreshold>
+                    <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.25</ArmorRating_Heat>
+                    <PainShockThreshold>0.25</PainShockThreshold>
                     
                     <ComfyTemperatureMin>-15</ComfyTemperatureMin>
                     <ComfyTemperatureMax>15</ComfyTemperatureMax>
@@ -626,9 +679,9 @@
         <description>This hediff provides enhanced healing</description>
         <stages>
             <li>
-                <totalBleedFactor>0.875</totalBleedFactor>
+                <totalBleedFactor>0.80</totalBleedFactor>
                 <statFactors>
-                    <InjuryHealingFactor>2</InjuryHealingFactor>
+                    <InjuryHealingFactor>2.5</InjuryHealingFactor>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
 
@@ -650,7 +703,7 @@
         <stages>
             <li>
                 <statFactors>
-                    <ImmunityGainSpeed>2</ImmunityGainSpeed>
+                    <ImmunityGainSpeed>1.75</ImmunityGainSpeed>
                     <RawNutritionFactor>2</RawNutritionFactor>
                     <CancerRate>0.50</CancerRate>
                     <ToxicResistance>1.75</ToxicResistance>
@@ -676,11 +729,19 @@
         <stages>
             <li>
                 <statFactors>
-                    <MeleeDamageFactor>1.5</MeleeDamageFactor>
-                    <CarryingCapacity>1.5</CarryingCapacity>
-                    <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.5</VEF_MassCarryCapacity>
+                    <MeleeDamageFactor>2</MeleeDamageFactor>
+                    <CarryingCapacity>2</CarryingCapacity>
+                    <VEF_MassCarryCapacity MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2</VEF_MassCarryCapacity>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
+
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>1.25</postFactor>
+                    </li>
+                </capMods>
+                <capacityFactorEffectMultiplier>EternalComposition</capacityFactorEffectMultiplier>
             </li>
         </stages>
     </HediffDef>
@@ -694,19 +755,19 @@
                 <capMods>
                     <li>
                         <capacity>Hearing</capacity>
-                        <postFactor>1.5</postFactor>
+                        <postFactor>1.75</postFactor>
                     </li>
                     <li>
                         <capacity>Sight</capacity>
-                        <postFactor>1.5</postFactor>
+                        <postFactor>1.75</postFactor>
                     </li>
                     <li>
                         <capacity>Breathing</capacity>
-                        <postFactor>1.5</postFactor>
+                        <postFactor>1.75</postFactor>
                     </li>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <postFactor>1.5</postFactor>
+                        <postFactor>1.75</postFactor>
                     </li>
                 </capMods>
             </li>
@@ -720,12 +781,13 @@
         <stages>
             <li>
                 <statFactors>
-                    <PawnTrapSpringChance>0.50</PawnTrapSpringChance>
+                    <PawnTrapSpringChance>0.5</PawnTrapSpringChance>
                     <StaggerDurationFactor>0.5</StaggerDurationFactor>
                     <MeleeCooldownFactor>0.5</MeleeCooldownFactor>
                     <AimingDelayFactor>0.75</AimingDelayFactor>
                     <MeleeDodgeChance>1.5</MeleeDodgeChance>
                     <MeleeHitChance>1.5</MeleeHitChance>
+                    <MeleeDamageFactor>1.15</MeleeDamageFactor>
                     <ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
@@ -740,17 +802,17 @@
         <stages>
             <li>
                 <statFactors>
-                    <GlobalLearningFactor>1.25</GlobalLearningFactor>
-                    <LearningRateFactor>1.25</LearningRateFactor>
-                    <ResearchSpeed>1.25</ResearchSpeed>
-                    <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
-                    <HackingSpeed MayRequire="ludeon.rimworld.ideology">1.25</HackingSpeed>
-                    <MentalBreakThreshold>0.75</MentalBreakThreshold>
-                    <SocialImpact>1.25</SocialImpact>
-                    <TameAnimalChance>1.25</TameAnimalChance>
-                    <TrainAnimalChance>1.25</TrainAnimalChance>
-                    <NegotiationAbility>1.25</NegotiationAbility>
-                    <ConversionPower MayRequire="ludeon.rimworld.ideology">1.25</ConversionPower>
+                    <MentalBreakThreshold>0.5</MentalBreakThreshold>
+                    <GlobalLearningFactor>1.5</GlobalLearningFactor>
+                    <LearningRateFactor>1.5</LearningRateFactor>
+                    <ResearchSpeed>1.5</ResearchSpeed>
+                    <WorkSpeedGlobal>1.5</WorkSpeedGlobal>
+                    <HackingSpeed MayRequire="ludeon.rimworld.ideology">1.5</HackingSpeed>
+                    <SocialImpact>1.5</SocialImpact>
+                    <TameAnimalChance>1.5</TameAnimalChance>
+                    <TrainAnimalChance>1.5</TrainAnimalChance>
+                    <NegotiationAbility>1.5</NegotiationAbility>
+                    <ConversionPower MayRequire="ludeon.rimworld.ideology">1.5</ConversionPower>
                 </statFactors>
                 <statFactorEffectMultiplier>EternalComposition</statFactorEffectMultiplier>
             </li>
@@ -787,7 +849,7 @@
         <stages>
             <li>
                 <statOffsets>
-                    <EBSG_OutgoingDamageFactor>0.1</EBSG_OutgoingDamageFactor>
+                    <EBSG_OutgoingDamageFactor>0.05</EBSG_OutgoingDamageFactor>
                 </statOffsets>
                 <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
             </li>
@@ -812,7 +874,6 @@
                 <hediff>LethalEvolution</hediff>
                 <severityForFirstKill>0.1</severityForFirstKill>
                 <severityPerExtraKill>0.1</severityPerExtraKill>
-                <allowMechanoids>False</allowMechanoids>
                 <allowAnimals>False</allowAnimals>
                 <allowDryads>False</allowDryads>
                 <allowInsects>False</allowInsects>
@@ -843,7 +904,7 @@
             </li>
             <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
                 <cooldownTicks>30</cooldownTicks>
-                <severityChangeFactor>0.01</severityChangeFactor>
+                <severityChangeFactor>0.025</severityChangeFactor>
             </li>
         </comps>
     </HediffDef>
