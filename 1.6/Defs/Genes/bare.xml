@@ -931,5 +931,175 @@
                 <li Class="EBSGFramework.HediffCompProperties_SeverityByAge" />
             </comps>
     </HediffDef>
-    
+
+    <GeneDef ParentName="Eternal-Power-Base">
+        <defName>EternalRestraint</defName>
+        <label>restraint</label>
+        <description>Eternals with this gene can freely change the upper limits on how much damage they can do in melee combat</description>
+        <iconPath>Powers/Gene_Restraint</iconPath>
+        <displayOrderInCategory>1000000</displayOrderInCategory>
+        <modExtensions>
+			<li Class="EBSGFramework.EBSGExtension">
+				<hediffsToApply>
+                    <li>
+                        <hediff>EternalRestraint</hediff>
+                    </li>
+                </hediffsToApply>
+			</li>
+		</modExtensions>
+    </GeneDef>
+
+    <AbilityCategoryDef>
+        <defName>EternalPowers</defName>
+        <displayOrder>2000</displayOrder>
+    </AbilityCategoryDef>
+
+    <AbilityDef Abstract="True" Name="EternalPowerAbilitiesBase">
+        <jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
+        <aiCanUse>True</aiCanUse>
+        <cooldownTicksRange>100</cooldownTicksRange>
+        <category>EternalPowers</category>
+        <hostile>true</hostile>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <AbilityDef Abstract="True" ParentName="EternalPowerAbilitiesBase" Name="EternalSelfCastBase">
+        <jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
+        <aiCanUse>True</aiCanUse>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <category>EternalPowers</category>
+        <hostile>true</hostile>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>1</warmupTime>
+        </verbProperties>
+        <targetRequired>false</targetRequired>
+        <showCastingProgressBar>true</showCastingProgressBar>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <requireLineOfSight>false</requireLineOfSight>
+            <range>0.9</range>
+            <drawAimPie>false</drawAimPie>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <AbilityDef Name="EternalRestraintBase" ParentName="EternalSelfCastBase" Abstract="True">
+        <iconPath>Powers/Gene_Restraint</iconPath>
+        <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <verbProperties>
+            <warmupTime>0.1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EternalRestraintBase">
+        <defName>Eternal_Unrestrained</defName>
+        <label>unrestrained</label>
+        <description>No holding back.</description>
+        <iconPath>Powers/Gene_Restraint_Unrestrained</iconPath>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EternalRestraint</hediffDef>
+                <onlyBrain>False</onlyBrain>
+                <severity>1</severity>
+                <onlyApplyToSelf>True</onlyApplyToSelf>
+                <replaceExisting>True</replaceExisting>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EternalRestraintBase">
+        <defName>Eternal_Restrained</defName>
+        <label>restrained</label>
+        <description>Multiplies melee damage factor by 0.1.</description>
+        <iconPath>Powers/Gene_Restraint_Restrained</iconPath>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EternalRestraint</hediffDef>
+                <onlyBrain>False</onlyBrain>
+                <severity>1.1</severity>
+                <onlyApplyToSelf>True</onlyApplyToSelf>
+                <replaceExisting>True</replaceExisting>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="EternalRestraintBase">
+        <defName>Eternal_VeryRestrained</defName>
+        <label>very restrained</label>
+        <description>Multiplies melee damage factor by 0.01.</description>
+        <iconPath>Powers/Gene_Restraint_VeryRestrained</iconPath>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>EternalRestraint</hediffDef>
+                <onlyBrain>False</onlyBrain>
+                <severity>2.1</severity>
+                <onlyApplyToSelf>True</onlyApplyToSelf>
+                <replaceExisting>True</replaceExisting>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <HediffDef ParentName="Eternal-H-Base">
+		<defName>EternalRestraint</defName>
+		<label>restraint</label>
+		<description>How much this pawn is holding back.</description>
+        <stages>
+            <li />
+            <li>
+                <label>restrained</label>
+                <minSeverity>1.01</minSeverity>
+                <statFactors>
+                    <MeleeDamageFactor>0.1</MeleeDamageFactor>
+                </statFactors>
+            </li>
+            <li>
+                <label>very restrained</label>
+                <minSeverity>2.01</minSeverity>
+                <statFactors>
+                    <MeleeDamageFactor>0.01</MeleeDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_InvisibleAtStage">
+                <invisibleStages>
+                    <li>1</li>
+                </invisibleStages>
+            </li>
+            <li Class="EBSGFramework.HediffCompProperties_GiveAbilityAtSeverity">
+                <abilitiesAtSeverities>
+                    <li>
+                        <abilityDef>Eternal_Restrained</abilityDef>
+                        <validSeverity>0~1</validSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>Eternal_Unrestrained</abilityDef>
+                        <validSeverity>1.01~2</validSeverity>
+                    </li>
+                    <li>
+                        <abilityDef>Eternal_VeryRestrained</abilityDef>
+                        <validSeverity>1.01~2</validSeverity>
+                    </li>
+                    <li> 
+                        <abilityDef>Eternal_Restrained</abilityDef>
+                        <validSeverity>2.01~99</validSeverity>
+                    </li>
+                </abilitiesAtSeverities>
+            </li>
+        </comps>	
+	</HediffDef>
+
 </Defs>
