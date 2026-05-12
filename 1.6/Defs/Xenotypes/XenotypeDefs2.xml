@@ -6,10 +6,12 @@
     <label>eternal</label>
     <description>An eternal warrior hailing from the realm of Eternity</description>
     <iconPath>X-Icon</iconPath>
-    <displayPriority>1000</displayPriority>
+    <displayPriority>9000</displayPriority>
     <combatPowerFactor>5</combatPowerFactor>
     <inheritable>true</inheritable>
     <genes>
+      <li>Body_Thin</li>
+      <li>Body_Standard</li>
       <li>EternalCore</li>
       <li>EternalAging</li>
       <li>EternalSpeed</li>
